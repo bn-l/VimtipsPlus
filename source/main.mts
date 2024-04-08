@@ -1,9 +1,8 @@
 import "./css/style.css"; // do css imports here.
-import tips from "./tips.json";
+import tips from "./data/tips-generated.json";
 
 import { VimWasm, checkBrowserCompatibility, StartOptions } from "vim-wasm";
 import worker from "vim-wasm/vim.js?url";
-
 
 // wrap in try catch and set tip div to error message if one occurs
 
@@ -14,6 +13,8 @@ import worker from "vim-wasm/vim.js?url";
 
 // These guys are also wrapping vim.wasm: https://github.com/programmerhat/vim-online-editor/blob/master/index.php
 // And doing some tricks for pasting (which might not be necessary)
+
+// See original project for extension related js etc
 
 
 const randomIndex = Math.floor(Math.random() * tips.length);

@@ -2,9 +2,17 @@
 
 <!-- 4ea42c -->
 
-`a` enter into insert mode after the character your cursor is on.
+ 
+ 
+
+---
 
 
+<!-- 4ea42c -->
+
+`a` enter into insert mode after the character your cursor is on. 
+
+ 
 ---
 
 <!-- 8517c2 -->

@@ -1,0 +1,1052 @@
+[
+    {
+        "tipId": "4ea42c",
+        "tipHtml": "\n<p><code>a</code> enter into insert mode after the character your cursor is on.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L3"
+    },
+    {
+        "tipId": "8517c2",
+        "tipHtml": "\n\n<p><code>A</code> enter into insert mode at the end of the current line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L10"
+    },
+    {
+        "tipId": "b7419c",
+        "tipHtml": "\n\n<p><code>b</code> move cursor to first character of previous word.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L18"
+    },
+    {
+        "tipId": "2087ec",
+        "tipHtml": "\n\n<p><code>B</code> move cursor to first character of previous non-blank series of characters.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L26"
+    },
+    {
+        "tipId": "b5d81a",
+        "tipHtml": "\n\n<p><code>&lt;C-b&gt;</code> scroll page backwards (move up in the file).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L34"
+    },
+    {
+        "tipId": "e85d7f",
+        "tipHtml": "\n\n<p><code>c</code> stands for “change” will not do anything on its own, but acts as a modifier to\nother commands. Here are some common commands handy for editing front end code.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L42"
+    },
+    {
+        "tipId": "8b1167",
+        "tipHtml": "\n\n<p><code>cw</code> cw stands for change word. This will delete the word your cursor is over\nand enter into insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L51"
+    },
+    {
+        "tipId": "71216d",
+        "tipHtml": "\n\n<p><code>ci(</code> Change all text in between a set of parenthesis.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L60"
+    },
+    {
+        "tipId": "09128f",
+        "tipHtml": "\n\n<p><code>ci&quot;</code> If your cursor is in between a set of quotes, this will delete everything\ninside those quotes and drop you into insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L68"
+    },
+    {
+        "tipId": "dab4dc",
+        "tipHtml": "\n\n<p><code>ct&quot;</code> Change text til the quotes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L77"
+    },
+    {
+        "tipId": "690b1a",
+        "tipHtml": "\n\n<p><code>2ct&quot;</code> Change text from cursor up til the 2nd quote in a line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L85"
+    },
+    {
+        "tipId": "0038ab",
+        "tipHtml": "\n\n<p><code>cF&quot;</code> Change from cursor backwards finding and including the previous quote.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L93"
+    },
+    {
+        "tipId": "b10ea4",
+        "tipHtml": "\n\n<p><code>C</code> Delete until the end of the line and enter into insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L101"
+    },
+    {
+        "tipId": "bee482",
+        "tipHtml": "\n\n<p><code>:cd ../</code> Change directories to one previous.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L109"
+    },
+    {
+        "tipId": "9b2964",
+        "tipHtml": "\n\n<p><code>:cd ~/Sites/projectname</code> Change directories to a known directory.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L117"
+    },
+    {
+        "tipId": "1f229a",
+        "tipHtml": "\n\n<p>CTRL-c In Normal mode, any pending command is aborted. Also aborts current\nsearch.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L125"
+    },
+    {
+        "tipId": "bc5458",
+        "tipHtml": "\n\n<p><code>dd</code> Delete the current line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L134"
+    },
+    {
+        "tipId": "3f6539",
+        "tipHtml": "\n\n<p><code>D</code> Delete from cursor until the end of the line. Same as <code>d$</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L142"
+    },
+    {
+        "tipId": "ed37d0",
+        "tipHtml": "\n\n<p><code>dw</code> Delete the word your cursor is on. Difference between this and cw is that\nyou do not enter into insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L150"
+    },
+    {
+        "tipId": "ff7aa3",
+        "tipHtml": "\n\n<p><code>2dw</code> This will delete the word your cursor is on as well as the next one. You\ncan replace 2 with any number.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L159"
+    },
+    {
+        "tipId": "3c2c98",
+        "tipHtml": "\n\n<p><code>d^</code> Delete from cursor to beginning of the line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L168"
+    },
+    {
+        "tipId": "489cc0",
+        "tipHtml": "\n\n<p><code>d/pattern</code> Deletes up to first matched pattern.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L176"
+    },
+    {
+        "tipId": "6739e6",
+        "tipHtml": "\n\n<p><code>2df&quot;</code> Delete from cursor to find the 2nd quote mark. This is inclusive so it\nwill delete the second quote. This is a handy command for deleting attributes in\nhtml if your cursor is on the first letter of the attribute.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L184"
+    },
+    {
+        "tipId": "0c6880",
+        "tipHtml": "\n\n<p><code>di&quot;</code> Delete everything inside of these quotes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L194"
+    },
+    {
+        "tipId": "e93598",
+        "tipHtml": "\n\n<p><code>da&quot;</code> Delete everything with quotes wrapped around (including the quotes).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L202"
+    },
+    {
+        "tipId": "40a15d",
+        "tipHtml": "\n\n<p><code>&lt;C-d&gt;</code> Scroll half page (in this case “d” is a mnemonic for “down”).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L210"
+    },
+    {
+        "tipId": "5c47a9",
+        "tipHtml": "\n\n<p><code>:%d</code> Deletes all lines in a file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L218"
+    },
+    {
+        "tipId": "71f387",
+        "tipHtml": "\n\n<p><code>:2,8d</code> Deletes lines two through eight.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L226"
+    },
+    {
+        "tipId": "fd7079",
+        "tipHtml": "\n\n<p><code>e</code> jumps to the end of the next word.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L234"
+    },
+    {
+        "tipId": "171899",
+        "tipHtml": "\n\n<p><code>E</code> jumps to the end of the next non-blank series of characters.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L242"
+    },
+    {
+        "tipId": "71f0f3",
+        "tipHtml": "\n\n<p><code>ge</code> jumps to the end of the previous word.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L250"
+    },
+    {
+        "tipId": "001642",
+        "tipHtml": "\n\n<p><code>:ea 5m</code> jump to five minutes ago. Seriously.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L258"
+    },
+    {
+        "tipId": "77ee33",
+        "tipHtml": "\n\n<p><code>:ea 1h</code> jump to 1 hour ago.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L266"
+    },
+    {
+        "tipId": "91a0ec",
+        "tipHtml": "\n\n<p><code>:ea 14h 30m</code> jump to 14 hours and 30 minutes ago. Ok you get the point.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L274"
+    },
+    {
+        "tipId": "07b1bb",
+        "tipHtml": "\n\n<p><code>:e filename</code> open file in the current window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L282"
+    },
+    {
+        "tipId": "f6015f",
+        "tipHtml": "\n\n<p><code>:e .</code> open file explorer in current directory.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L290"
+    },
+    {
+        "tipId": "d0afaa",
+        "tipHtml": "\n\n<p>f is for finding things so it doesn’t do anything on it’s own. It will jump to\nthe next character you type after f. It can be combined with c,d,y to change,\ncut, and copy sections of text.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L298"
+    },
+    {
+        "tipId": "5cf64e",
+        "tipHtml": "\n\n<p><code>fr</code> jumps to the next r on the (same line only).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L308"
+    },
+    {
+        "tipId": "0533d0",
+        "tipHtml": "\n\n<p><code>ft</code> jumps to the next t on the (same line only).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L316"
+    },
+    {
+        "tipId": "5218bc",
+        "tipHtml": "\n\n<p><code>f,</code> jumps to the next , on the (same line only).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L324"
+    },
+    {
+        "tipId": "0497ea",
+        "tipHtml": "\n\n<p><code>Fr</code> jumps to the previous r (same line only).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L332"
+    },
+    {
+        "tipId": "15add2",
+        "tipHtml": "\n\n<p><code>Ft</code> jumps to the previous t (same line only).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L340"
+    },
+    {
+        "tipId": "de937d",
+        "tipHtml": "\n\n<p><code>F,</code> jumps to the previous , (same line only).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L348"
+    },
+    {
+        "tipId": "59434c",
+        "tipHtml": "\n\n<p><code>2df&quot;</code> delete from cursor through two occurences of “.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L356"
+    },
+    {
+        "tipId": "413e6e",
+        "tipHtml": "\n\n<p><code>&lt;C-f&gt;</code> scrolls one full page forward.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L364"
+    },
+    {
+        "tipId": "f7c028",
+        "tipHtml": "\n\n<p><code>gx</code> Go to url under your cursor in a browser.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L372"
+    },
+    {
+        "tipId": "e3c9a2",
+        "tipHtml": "\n\n<p><code>gf</code> Go open file under your cursor in the current window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L380"
+    },
+    {
+        "tipId": "e74322",
+        "tipHtml": "\n\n<p><code>g;</code> Go to the last place you edited text.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L388"
+    },
+    {
+        "tipId": "f41878",
+        "tipHtml": "\n\n<p><code>g,</code> Go forward in the change list.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L396"
+    },
+    {
+        "tipId": "b81884",
+        "tipHtml": "\n\n<p><code>4g,</code> Go forward 4 spots on the change list.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L404"
+    },
+    {
+        "tipId": "3a70be",
+        "tipHtml": "\n\n<p><code>gg=G</code> or <code>1G=G</code> format the entire file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L412"
+    },
+    {
+        "tipId": "5f5863",
+        "tipHtml": "\n\n<p><code>gn</code> Grab the next match from last search and visually select it.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L420"
+    },
+    {
+        "tipId": "0a7c52",
+        "tipHtml": "\n\n<p><code>gi</code> Go into insert mode at the end of the last insert you did.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L428"
+    },
+    {
+        "tipId": "e892b3",
+        "tipHtml": "\n\n<p><code>ge</code> Go to the end of the previous word.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L436"
+    },
+    {
+        "tipId": "f30527",
+        "tipHtml": "\n\n<p><code>gp</code> Pastes just like p but leave the cursor after the pasted text.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L444"
+    },
+    {
+        "tipId": "12d05d",
+        "tipHtml": "\n\n<p><code>gP</code> Pastes just like P but leave the cursor after the pasted text.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L452"
+    },
+    {
+        "tipId": "f1f227",
+        "tipHtml": "\n\n<p><code>gv</code> Reselects most recent visual selection.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L460"
+    },
+    {
+        "tipId": "934aea",
+        "tipHtml": "\n\n<p><code>gv$A</code> Reselects most recent visual selection then moves to the end of the line,\nand enters insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L468"
+    },
+    {
+        "tipId": "e8f766",
+        "tipHtml": "\n\n<p><code>g~~</code> Switch case of all characters in current line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L477"
+    },
+    {
+        "tipId": "96cc16",
+        "tipHtml": "\n\n<p><code>gq</code> Format selected text.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L485"
+    },
+    {
+        "tipId": "587f03",
+        "tipHtml": "\n\n<p><code>:%g/pattern/norm @q</code> Run macro q on all lines in a file that match a pattern.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L493"
+    },
+    {
+        "tipId": "dad3a7",
+        "tipHtml": "\n\n<p><code>:%g/^\\d/norm yyGp</code> This searches for all lines of a file that start with a\ndigit as the first character. It then copies the line and pastes it at the\nbottom of the file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L501"
+    },
+    {
+        "tipId": "dd80f5",
+        "tipHtml": "\n\n<p><code>:%g/^$/norm dd</code> Delete all blank lines in a file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L511"
+    },
+    {
+        "tipId": "2aa5e0",
+        "tipHtml": "\n\n<p><code>:%g/^\\$/norm &quot;Ayy</code> Yank (copy) all lines that start with a dollar sign and\nappend them to register A.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L519"
+    },
+    {
+        "tipId": "427c14",
+        "tipHtml": "\n\n<p><code>h</code> Move cursor one character to the left.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L528"
+    },
+    {
+        "tipId": "b9dd78",
+        "tipHtml": "\n\n<p><code>4h</code> Move cursor four characters to the left.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L536"
+    },
+    {
+        "tipId": "f9abc6",
+        "tipHtml": "\n\n<p><code>dh</code> Delete character to the left of cursor.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L544"
+    },
+    {
+        "tipId": "791a10",
+        "tipHtml": "\n\n<p><code>:h</code> Opens up vim help in a new window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L552"
+    },
+    {
+        "tipId": "319b64",
+        "tipHtml": "\n\n<p><code>:h a</code> Opens vim help to documentation on the a key.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L560"
+    },
+    {
+        "tipId": "a65829",
+        "tipHtml": "\n\n<p><code>:h i_CTRL-R</code> Opens vim help to documentation on pressing control and r while in\ninsert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L568"
+    },
+    {
+        "tipId": "e55319",
+        "tipHtml": "\n\n<p><code>H</code> Move cursor to first (highest) line in window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L577"
+    },
+    {
+        "tipId": "f4e090",
+        "tipHtml": "\n\n<p><code>i</code> Enter insert mode where your cursor is. Any text you insert will be inserted\nbefore the character your cursor was over.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L585"
+    },
+    {
+        "tipId": "e4d9fb",
+        "tipHtml": "\n\n<p><code>4i&lt;tab&gt;&lt;escape&gt;</code> Insert 4 tabs (leaves you in command mode, not insert mode).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L594"
+    },
+    {
+        "tipId": "c25350",
+        "tipHtml": "\n\n<p><code>80i*&lt;escape&gt;</code> Insert 80 * characters.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L602"
+    },
+    {
+        "tipId": "548cb2",
+        "tipHtml": "\n\n<p><code>I</code> Insert text at the very beginning of the line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L610"
+    },
+    {
+        "tipId": "aead5c",
+        "tipHtml": "\n\n<p><code>j</code> Moves cursor down one line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L618"
+    },
+    {
+        "tipId": "079d64",
+        "tipHtml": "\n\n<p><code>32j</code> Moves the cursor down 32 lines.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L626"
+    },
+    {
+        "tipId": "41b9c0",
+        "tipHtml": "\n\n<p><code>J</code> Joins two lines removing indent.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L634"
+    },
+    {
+        "tipId": "8308f6",
+        "tipHtml": "\n\n<p><code>k</code> moves cursor up one line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L642"
+    },
+    {
+        "tipId": "902fcd",
+        "tipHtml": "\n\n<p><code>8k</code> moves cursor up 8 lines.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L650"
+    },
+    {
+        "tipId": "f49620",
+        "tipHtml": "\n\n<p><code>&lt;C-w&gt;K</code> rotates window to horizontal split.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L658"
+    },
+    {
+        "tipId": "0baeb0",
+        "tipHtml": "\n\n<p><code>dk</code> delete current line and line above cursor.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L666"
+    },
+    {
+        "tipId": "693ca9",
+        "tipHtml": "\n\n<p><code>l</code> Move cursor right one character.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L674"
+    },
+    {
+        "tipId": "428673",
+        "tipHtml": "\n\n<p><code>dl</code> Delete character under cursor. Same as x.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L682"
+    },
+    {
+        "tipId": "a2c290",
+        "tipHtml": "\n\n<p><code>L</code> Move cursor to last line in window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L690"
+    },
+    {
+        "tipId": "0ee094",
+        "tipHtml": "\n\n<p>m is for marking spots (which you can think of as bookmarks in your files). It\ndoes not do anything by itself.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L698"
+    },
+    {
+        "tipId": "d62145",
+        "tipHtml": "\n\n<p><code>mk</code> mark spot as k.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L707"
+    },
+    {
+        "tipId": "14a089",
+        "tipHtml": "\n\n<p><code>'k</code> return the cursor to the spot you marked as “k”.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L715"
+    },
+    {
+        "tipId": "9de192",
+        "tipHtml": "\n\n<p><code>d'k</code> delete from the cursor’s position to the spot you marked as “k”.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L723"
+    },
+    {
+        "tipId": "04f023",
+        "tipHtml": "\n\n<p><code>c'k</code> change from the cursor’s position to the spot you marked as “k”.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L731"
+    },
+    {
+        "tipId": "f03411",
+        "tipHtml": "\n\n<p><code>y'k</code> yank/copy from the cursor’s position to the spot you marked as “k”.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L739"
+    },
+    {
+        "tipId": "dfc7e0",
+        "tipHtml": "\n\n<p><code>M</code> Move cursor to middle of window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L747"
+    },
+    {
+        "tipId": "5cf5f1",
+        "tipHtml": "\n\n<p><code>n</code> moves forward to next match of a search pattern.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L755"
+    },
+    {
+        "tipId": "444f1a",
+        "tipHtml": "\n\n<p><code>N</code> moves backwards to previous match of a search pattern.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L763"
+    },
+    {
+        "tipId": "9a0a42",
+        "tipHtml": "\n\n<p><code>gn</code> search forward for the last used search pattern.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L771"
+    },
+    {
+        "tipId": "55719a",
+        "tipHtml": "\n\n<p><code>o</code> Opens a new line below where your cursor is and places you in insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L779"
+    },
+    {
+        "tipId": "26e943",
+        "tipHtml": "\n\n<p><code>O</code> Opens a new line above where your cursor is and places you in insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L787"
+    },
+    {
+        "tipId": "35302e",
+        "tipHtml": "\n\n<p><code>CTRL-o</code> Go backwards in the jumplist (list of where your cursor has been).\nTrust me this is like movement steroids.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L795"
+    },
+    {
+        "tipId": "665e8a",
+        "tipHtml": "\n\n<p><code>12CTRL-o</code> You can also pass it a count so this will go backwards in the\njumplist 12 spots.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L804"
+    },
+    {
+        "tipId": "8244bf",
+        "tipHtml": "\n\n<p><code>:only</code> Closes all splits except for the current one.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L813"
+    },
+    {
+        "tipId": "ed1395",
+        "tipHtml": "\n\n<p>Paste is a pretty big deal when you are dealing with code. So p should be one of\nyour best friends.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L821"
+    },
+    {
+        "tipId": "b3cb7a",
+        "tipHtml": "\n\n<p><code>p</code> pastes in the last thing you yanked or deleted (copied or cut) after the\ncursor.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L830"
+    },
+    {
+        "tipId": "953862",
+        "tipHtml": "\n\n<p><code>P</code> pastes in the last thing you yanked or deleted (copied or cut) before the\ncursor.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L839"
+    },
+    {
+        "tipId": "a5b749",
+        "tipHtml": "\n\n<p><code>2p</code> pastes in the last thing you yanked or deleted (copied or cut) twice.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L848"
+    },
+    {
+        "tipId": "48555e",
+        "tipHtml": "\n\n<p><code>xp</code> this will swap two characters. Technically it just deletes the character\nunder your cursor, then pastes it back in. This is the equivalent of <code>dlp</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L856"
+    },
+    {
+        "tipId": "4bad24",
+        "tipHtml": "\n\n<p><code>&quot;*p</code> Pastes in text from your system clipboard.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L865"
+    },
+    {
+        "tipId": "b0819c",
+        "tipHtml": "\n\n<p><code>&quot;2p</code> This will paste in text from the second register. You will use this all of\nthe time. Most useful when you delete something you want to paste, then delete\nsomething else. Move to the place where you want to paste text, hit p and go\n“doh”. Just remember <code>&quot;2p</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L873"
+    },
+    {
+        "tipId": "e7552b",
+        "tipHtml": "\n\n<p><code>&quot;%p</code> Pastes in the name of the current file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L884"
+    },
+    {
+        "tipId": "09aa3d",
+        "tipHtml": "\n\n<p><code>:212pu</code> Pastes in last copy or delete on line 212. 212 can be any line number.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L892"
+    },
+    {
+        "tipId": "3cf668",
+        "tipHtml": "\n\n<p><code>:42pu *</code> Pastes in system clipboard text at line 42.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L900"
+    },
+    {
+        "tipId": "fb04b7",
+        "tipHtml": "\n\n<p><code>&quot;/p</code> Pastes in your last search pattern.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L908"
+    },
+    {
+        "tipId": "ebed70",
+        "tipHtml": "\n\n<p><code>:&lt;c-r&gt;/</code> Pastes in your last search pattern when you are on the command line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L916"
+    },
+    {
+        "tipId": "54be36",
+        "tipHtml": "\n\n<p><code>&quot;ap</code> Pastes in the contents of register a. To see a list of registers and what\nthey have in them, do <code>:reg</code> or <code>:registers</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L924"
+    },
+    {
+        "tipId": "41624e",
+        "tipHtml": "\n\n<p><code>&quot;= 8*8&lt;CR&gt;p</code> Pastes in evaluation of the expression <code>8*8</code>. This could be any\nmaths you want. <code>=</code> is the expression register, which allows you to do\ncalculations. From normal mode you can launch it by hitting <code>&quot;=</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L933"
+    },
+    {
+        "tipId": "e7be72",
+        "tipHtml": "\n\n<p>q records things - so it doesn’t do much on its own. You need to tell it what\nregister to store the recorded sequence in.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L943"
+    },
+    {
+        "tipId": "358677",
+        "tipHtml": "\n\n<p><code>qa</code> Begins recording into register a. Enter in keystrokes you want to save,\nthen hit <code>q</code> to end the recording.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L952"
+    },
+    {
+        "tipId": "621750",
+        "tipHtml": "\n\n<p><code>@a</code> Will play back what you just recorded into register a.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L961"
+    },
+    {
+        "tipId": "7d0b84",
+        "tipHtml": "\n\n<p><code>:q</code> quits file only if you have no unsaved changes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L969"
+    },
+    {
+        "tipId": "168906",
+        "tipHtml": "\n\n<p><code>:q!</code> quits file without writing any of your changes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L977"
+    },
+    {
+        "tipId": "17ffb6",
+        "tipHtml": "\n\n<p><code>:wq</code> saves and quits file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L985"
+    },
+    {
+        "tipId": "8bfa64",
+        "tipHtml": "\n\n<p><code>:12,42wq</code> saves lines 12 to 42 and quits file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L993"
+    },
+    {
+        "tipId": "791fa0",
+        "tipHtml": "\n\n<p><code>:wqa</code> saves and quits all files in buffer.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1001"
+    },
+    {
+        "tipId": "c1af10",
+        "tipHtml": "\n\n<p><code>r</code> Replaces character under cursor with next input i.e.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1009"
+    },
+    {
+        "tipId": "70e4cd",
+        "tipHtml": "\n\n<p><code>ra</code> Replaces the character under the cursor with a.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1017"
+    },
+    {
+        "tipId": "625a0c",
+        "tipHtml": "\n\n<p><code>R</code> Enter “replace mode” which is like insert mode except you will overwrite\ncharacters instead of insert between them.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1025"
+    },
+    {
+        "tipId": "9385e9",
+        "tipHtml": "\n\n<p><code>:r filename</code> Read the contents of filename and place into the current buffer.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1034"
+    },
+    {
+        "tipId": "f1ce9a",
+        "tipHtml": "\n\n<p><code>:r !ls</code> Pastes in the output of ls. ! calls an external process in vim. So this\ncan be pretty userful.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1042"
+    },
+    {
+        "tipId": "cae396",
+        "tipHtml": "\n\n<p><code>:r !cd -; ls</code> Pastes in the directory listing of the last directory you were\nin.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1051"
+    },
+    {
+        "tipId": "192dd8",
+        "tipHtml": "\n\n<p><code>:r !w3m -dump http://somewebsite.com</code> Pastes in the content from\nsomewebsite.com without any of the markup. Must have w3m installed. WHICH YOU\nSHOULD :) If you have homebrew installed you can simply run <code>brew install w3m</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1060"
+    },
+    {
+        "tipId": "8e0269",
+        "tipHtml": "\n\n<p><code>:r !tree</code> Pastes in the output from running tree on a directory.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1070"
+    },
+    {
+        "tipId": "95e422",
+        "tipHtml": "\n\n<p><code>:reg</code> or <code>:registers</code> Print out a list of available registers and their\ncontents. Registers are like a multi-shelf clipboard. But it also stores all of\nyour recent deletes. In vim delete behaves more like cut than a true delete.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1078"
+    },
+    {
+        "tipId": "fb9f73",
+        "tipHtml": "\n\n<p><code>s</code> deletes the character your cursor is on and enters into insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1088"
+    },
+    {
+        "tipId": "2769dd",
+        "tipHtml": "\n\n<p><code>S</code> deletes the whole line you are on and enters into insert mode.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1096"
+    },
+    {
+        "tipId": "9aceb4",
+        "tipHtml": "\n\n<p><code>:sp</code> This will split the current window horizontally. Sp is short for split.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1104"
+    },
+    {
+        "tipId": "9775b4",
+        "tipHtml": "\n\n<p><code>:sp file.txt</code> This will split the current window horizontally with a file named\nfile.txt.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1112"
+    },
+    {
+        "tipId": "aef811",
+        "tipHtml": "\n\n<p><code>:vsp file.txt</code> This will split the current window vertically. vsp stands for\nvertical split.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1121"
+    },
+    {
+        "tipId": "b0f013",
+        "tipHtml": "\n\n<p>s is how you do find and replace, so let’s just say it is all of the important.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1130"
+    },
+    {
+        "tipId": "b84456",
+        "tipHtml": "\n\n<p><code>:s/foo/bar</code> replaces foo with bar on the current line for the first occurance\nof foo.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1138"
+    },
+    {
+        "tipId": "6b0e0f",
+        "tipHtml": "\n\n<p><code>:12,42s/foo/bar</code> replaces foo with bar on lines 12,42 for the first occurance\nof foo in each line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1147"
+    },
+    {
+        "tipId": "0610c7",
+        "tipHtml": "\n\n<p><code>:12,42s/foo/bar/g</code> replaces all occurances of foo with bar on lines 12,42.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1156"
+    },
+    {
+        "tipId": "1c3f6b",
+        "tipHtml": "\n\n<p><code>:%s/foo/bar/g</code> replaces all occurances of foo with bar for the entire file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1164"
+    },
+    {
+        "tipId": "afc365",
+        "tipHtml": "\n\n<p><code>:'&lt;,'&gt;s/foo/bar/g</code> replaces all occurances of foo with bar for the last visual\nselection.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1172"
+    },
+    {
+        "tipId": "7dc3f6",
+        "tipHtml": "\n\n<p><code>:%~</code> Repeat last substitute with same substitute string but with last used\nsearch pattern across the entire file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1181"
+    },
+    {
+        "tipId": "0b036a",
+        "tipHtml": "\n\n<p><code>:%s/\\ class=&quot;.*&quot;//g&quot;</code> Delete all classes in markup for the current file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1190"
+    },
+    {
+        "tipId": "593114",
+        "tipHtml": "\n\n<p><code>:%s/\\ id=&quot;.*&quot;//g&quot;</code> Delete all ids in markup for the current file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1198"
+    },
+    {
+        "tipId": "6e578b",
+        "tipHtml": "\n\n<p><code>:bufdo %s/\\ class=&quot;.*&quot;//ge | update</code> Delete all classes in markup for all files\nin buffer.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1206"
+    },
+    {
+        "tipId": "f54f5a",
+        "tipHtml": "\n\n<p><code>:tabdo %s/\\ class=&quot;.*&quot;//ge | update</code> Delete all classes in markup for all files\nin the current tab.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1215"
+    },
+    {
+        "tipId": "5e8146",
+        "tipHtml": "\n\n<p><code>:%s/\\s\\+$//e</code> Removes trailing whitespace.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1224"
+    },
+    {
+        "tipId": "83608a",
+        "tipHtml": "\n\n<p><code>t</code> means ‘til’ so it doesn’t do anything on its own. It is very similar to f\nbut f is inclusive. T is exclusive meaning it will stop before the character you\nare finding.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1232"
+    },
+    {
+        "tipId": "6dc836",
+        "tipHtml": "\n\n<p><code>tf</code> put cursor one character before the next occurance of f.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1242"
+    },
+    {
+        "tipId": "6c32fb",
+        "tipHtml": "\n\n<p><code>;</code> repeat latest f, F, t, or T.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1250"
+    },
+    {
+        "tipId": "84b943",
+        "tipHtml": "\n\n<p><code>,</code> repeat it in the opposite direction.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1258"
+    },
+    {
+        "tipId": "a89431",
+        "tipHtml": "\n\n<p><code>dt&lt;</code> Delete up until the next <code>&lt;</code>. This is handy in the markup world.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1266"
+    },
+    {
+        "tipId": "1c008e",
+        "tipHtml": "\n\n<p><code>dt&quot;</code> Delete from cursor until next “.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1274"
+    },
+    {
+        "tipId": "07ceee",
+        "tipHtml": "\n\n<p><code>dT}</code> Delete backwards from cursor until previous }.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1282"
+    },
+    {
+        "tipId": "ae05f4",
+        "tipHtml": "\n\n<p><code>u</code> Undo changes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1290"
+    },
+    {
+        "tipId": "9bd5a6",
+        "tipHtml": "\n\n<p><code>U</code> Undo all latest changes on one line, the line where the latest change was\nmade.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1298"
+    },
+    {
+        "tipId": "862678",
+        "tipHtml": "\n\n<p><code>&lt;C-r&gt;</code> Redo changes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1307"
+    },
+    {
+        "tipId": "11a814",
+        "tipHtml": "\n\n<p><code>&lt;C-u&gt;</code> Scroll window upwards to the amount set by the “scroll” option. Default\nis half a screen.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1315"
+    },
+    {
+        "tipId": "86e32c",
+        "tipHtml": "\n\n<p><code>:undol</code> List all the history points in your tree of changes.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1324"
+    },
+    {
+        "tipId": "817886",
+        "tipHtml": "\n\n<p><code>v</code> Start visual mode on a per character basis.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1332"
+    },
+    {
+        "tipId": "30e192",
+        "tipHtml": "\n\n<p><code>V</code> Starts visual mode linewise (selects whole lines).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1340"
+    },
+    {
+        "tipId": "0a8734",
+        "tipHtml": "\n\n<p><code>CTRL-v</code> Starts visual mode blockwise (very favorite).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1348"
+    },
+    {
+        "tipId": "027b9a",
+        "tipHtml": "\n\n<p><code>gv</code> Reselect last visual selection.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1356"
+    },
+    {
+        "tipId": "eb6afa",
+        "tipHtml": "\n\n<p><code>w</code> Moves to the next word.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1364"
+    },
+    {
+        "tipId": "c68994",
+        "tipHtml": "\n\n<p><code>3w</code> Moves to the third word.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1372"
+    },
+    {
+        "tipId": "da8c6e",
+        "tipHtml": "\n\n<p><code>x</code> delete character under your cursor.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1380"
+    },
+    {
+        "tipId": "663968",
+        "tipHtml": "\n\n<p><code>X</code> this will delete a character before the cursor. Same as <code>dh</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1388"
+    },
+    {
+        "tipId": "f4daad",
+        "tipHtml": "\n\n<p>y stands for copy, I mean yank. It doesn’t do anything by itself. It is very\nsimilar to c and d in how it can be used.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1396"
+    },
+    {
+        "tipId": "64a8b1",
+        "tipHtml": "\n\n<p><code>yy</code> Copies current line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1405"
+    },
+    {
+        "tipId": "8f8142",
+        "tipHtml": "\n\n<p><code>&quot;xyy</code> Copies current line into register x.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1413"
+    },
+    {
+        "tipId": "873598",
+        "tipHtml": "\n\n<p><code>&quot;jY</code> Copies current line into register j. If you like “Y” to work from the\ncursor to the end of line (which is more logical, but not Vi-compatible) use\n“:map Y y$”.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1421"
+    },
+    {
+        "tipId": "6061b0",
+        "tipHtml": "\n\n<p><code>:12,112y</code> Copies lines 12 through 112.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1431"
+    },
+    {
+        "tipId": "40d027",
+        "tipHtml": "\n\n<p><code>mk { motion } y'k</code> Mark a spot k, navigate to a new spot and then copies from\nmark k to the current position of your cursor.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1439"
+    },
+    {
+        "tipId": "c42278",
+        "tipHtml": "\n\n<p><code>yt&quot;</code> Copies from current cursor postion to the next quote on the same line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1448"
+    },
+    {
+        "tipId": "efb8d9",
+        "tipHtml": "\n\n<p><code>yt&gt;</code> Copies from current cursor postion to the next &gt; on the same line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1456"
+    },
+    {
+        "tipId": "57914c",
+        "tipHtml": "\n\n<p><code>yT&gt;</code> Copies from current cursor postion to the previous &gt; on the same line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1464"
+    },
+    {
+        "tipId": "e00015",
+        "tipHtml": "\n\n<p><code>yf&gt;</code> Copies from current cursor postion up to and including the next &gt; on the\nsame line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1472"
+    },
+    {
+        "tipId": "d4d2af",
+        "tipHtml": "\n\n<p><code>yF&gt;</code> Copies from current cursor postion up to and including the previous &gt; on\nthe same line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1481"
+    },
+    {
+        "tipId": "3bf45e",
+        "tipHtml": "\n\n<p><code>&lt;C-y&gt;</code> Scroll up by 1 line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1490"
+    },
+    {
+        "tipId": "ea8d99",
+        "tipHtml": "\n\n<p><code>12&lt;C-y&gt;</code> Scroll up 12 lines.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1498"
+    },
+    {
+        "tipId": "aa57a7",
+        "tipHtml": "\n\n<p><code>z&lt;CR&gt;</code> Redraws the screen so that your cursor line is at the top of the window.\nSame as <code>zt</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1506"
+    },
+    {
+        "tipId": "112244",
+        "tipHtml": "\n\n<p><code>z-</code> Redraws the screen so that your cursor line is at the bottom of the window.\nSame as <code>zb</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1515"
+    },
+    {
+        "tipId": "a7d740",
+        "tipHtml": "\n\n<p><code>zz</code> Redraws the screen so that your cursor line is at the middle of the window.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1524"
+    },
+    {
+        "tipId": "622159",
+        "tipHtml": "\n\n<p><code>*</code> search forward for the word under cursor in current file. Super useful for\nfinding common hex codes in css. And other things.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1532"
+    },
+    {
+        "tipId": "87d075",
+        "tipHtml": "\n\n<p><code>#</code> search backward for the word under cursor in current file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1541"
+    },
+    {
+        "tipId": "a8b543",
+        "tipHtml": "\n\n<p><code>/</code> Forward search for things.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1549"
+    },
+    {
+        "tipId": "7f4c9b",
+        "tipHtml": "\n\n<p><code>/&lt;p&gt;</code> Forward search for the next opening paragraph tag.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1557"
+    },
+    {
+        "tipId": "80037d",
+        "tipHtml": "\n\n<p><code>/\\</code> Forward search for the next space.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1565"
+    },
+    {
+        "tipId": "0de26d",
+        "tipHtml": "\n\n<p><code>/^}</code> Forward search for closing bracket of a css class, if the css class is\nclosed at the beginning of a new line i.e.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1573"
+    },
+    {
+        "tipId": "bf8b4b",
+        "tipHtml": "\n\n<p><code>?</code> Backwards search.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1582"
+    },
+    {
+        "tipId": "fea3cb",
+        "tipHtml": "\n\n<p><code>?http</code> Search backwards for the string <code>http</code>.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1590"
+    },
+    {
+        "tipId": "008f67",
+        "tipHtml": "\n\n<p><code>==</code> Format current line of code.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1598"
+    },
+    {
+        "tipId": "bb94cb",
+        "tipHtml": "\n\n<p><code>&gt;&gt;</code> Indent current line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1606"
+    },
+    {
+        "tipId": "9e0b0b",
+        "tipHtml": "\n\n<p><code>.</code> Repeat last change.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1614"
+    },
+    {
+        "tipId": "dfc76b",
+        "tipHtml": "\n\n<p><code>@:</code> Repeat last command line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1622"
+    },
+    {
+        "tipId": "f9e2ad",
+        "tipHtml": "\n\n<p><code>:set paste</code> Set this if you are pasting in content from the system clipboard.\nTrust me.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1630"
+    },
+    {
+        "tipId": "1ee0ae",
+        "tipHtml": "\n\n<p><code>:set paste!</code> Using ! at the end of any set reverses the current setting. This\nis useful so that you only have to remember one command and you never have to\nremember current state. For instance to be able to see line numbers you can do\n<code>:set nu</code> or <code>:set number</code>. To undo these commands, you would set <code>:set nonu</code> or\n<code>:set nonumber</code>. This seems like a lot to remember. An alternative is using !\nlike so <code>:set nu!</code> This will reverse whatever state set number currently\nresolves to. If line numbers are currently shown, they will be hidden. If they\nare hidden, they will become revealed. I use this pattern a lot when changing\nsettings of file.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1639"
+    },
+    {
+        "tipId": "30dd76",
+        "tipHtml": "\n\n<p><code>:12,54=</code> Format lines 12 through 54.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1655"
+    },
+    {
+        "tipId": "8a782b",
+        "tipHtml": "\n\n<p><code>:56,99&gt;</code> Indent lines 56 through 99.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1663"
+    },
+    {
+        "tipId": "19b8f9",
+        "tipHtml": "\n\n<p><code>:52,84y</code> Yank / copy lines 52 through 84.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1671"
+    },
+    {
+        "tipId": "6d9f6e",
+        "tipHtml": "\n\n<p><code>12&gt;&gt;</code> Indent 12 lines including the line you are on.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1679"
+    },
+    {
+        "tipId": "f7977f",
+        "tipHtml": "\n\n<p>Remember <code>&lt;C-</code> means the control key. So <code>&lt;C-b&gt;</code> would translate to pressing\ncontrol and b at the same time.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1687"
+    },
+    {
+        "tipId": "df2793",
+        "tipHtml": "\n\n<p><code>&lt;C-b&gt;</code> Scroll backwards one full screen.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1696"
+    },
+    {
+        "tipId": "095a00",
+        "tipHtml": "\n\n<p><code>&lt;C-u&gt;</code> Scroll backwards or ‘up’ a half screen.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1704"
+    },
+    {
+        "tipId": "328b9f",
+        "tipHtml": "\n\n<p><code>&lt;C-d&gt;</code> Scroll forwards or ‘down’ a half screen.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1712"
+    },
+    {
+        "tipId": "f3baa2",
+        "tipHtml": "\n\n<p><code>&lt;C-f&gt;</code> Scroll forwards.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1720"
+    },
+    {
+        "tipId": "44c4d0",
+        "tipHtml": "\n\n<p><code>&lt;C-y&gt;</code> Scroll backwards count lines (defaults to one).</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1728"
+    },
+    {
+        "tipId": "3e9bac",
+        "tipHtml": "\n\n<p><code>&lt;C-e&gt;</code> Scroll forwards one full line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1736"
+    },
+    {
+        "tipId": "3fa7dc",
+        "tipHtml": "\n\n<p><code>&lt;C-y&gt;</code> Scroll backwards one full line.</p>\n",
+        "editLink": "https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L1744"
+    }
+]
