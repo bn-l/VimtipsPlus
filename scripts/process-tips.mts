@@ -5,47 +5,26 @@ import crypto from "node:crypto";
 
 // Note: The first comment in a tip is always the tip id
 
-const BLANK_ID_SENTINEL = "BLANK_ID_SENTINEL";
-const BLANK_ID_SENTINEL_REGEX = new RegExp(`<!--\\s*${ BLANK_ID_SENTINEL }\\s* -->`);
+const BLANK_ID_SENTINEL = "INSERT_TIP_BELOW_DO_NOT_EDIT_THIS_LINE";
+const tipIdLineRegex = new RegExp(/^ *<!--\s*([A-z0-9]+)\s* -->[.\s]*?$/gm);
+const tipDividerRegex = new RegExp(/^ {0,3}---(?:-*)*\s*?$/gm); 
+
+const blankSnippet = `\n\n<!-- ${ BLANK_ID_SENTINEL } -->\n\n\n\n\n`;
 
 
 const md = markdownit({
-
     highlight: function(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return hljs.highlight(str, { language: lang }).value;
             }
-            catch {
-            }
+            catch { }
         }
         return "";
     },
 });
 
 const tipMd = await fsp.readFile("./source/tips.md", { encoding: "utf8" });
-let tipMdSnippets = tipMd.split("/^ {0,3}---(?:-*)* *\n$/gm");
-
-tipMdSnippets = tipMdSnippets.map((snippet: string) => {
-    if (snippet.match(BLANK_ID_SENTINEL_REGEX)) {
-        const snippetBody = snippet.replace(BLANK_ID_SENTINEL_REGEX, "").trim();
-
-        if (snippetBody.length) {
-            const tipId = `<!-- ${ crypto.randomBytes(3).toString("hex") } -->`;
-            snippet = snippet.replace(BLANK_ID_SENTINEL_REGEX, tipId);
-        }
-        return snippet;
-    }
-    else {
-        return snippet;
-    }
-});
-
-const processedMd = tipMdSnippets.join("---\n");
-await fsp.writeFile("./source/tips.md", processedMd, { encoding: "utf8" });
-
-const tipHtml = md.render(tipMd);
-
 
 const tipMdLines = tipMd.split("\n");
 
@@ -55,28 +34,45 @@ function getTipIdLineNumber(tipId: string): number {
     return index + 1;
 }
 
-// ------------------ tip html to json ---------------------- //
-
-const tipHtmlIdRegex = new RegExp(/<p>&lt;!--\s*([a-z0-9]+)\s*--&gt;<\/p>/);
-const processedTips: Tip[] = [];
-
-// tip html is split by <hr> (horizontal lines / "rules") created with "---".
-
-const tipSnippets = tipHtml.split("<hr>").filter(t => !!t.trim());
+const tipMdSnippets = tipMd.split(tipDividerRegex).filter(t => !!t.trim());
+const destructuredTips: Tip[] = [];
+const processedMdSnippets: string[] = [];
 
 
-for (let tipHtml of tipSnippets) {
+for (let [index, snippet] of tipMdSnippets.entries()) {
 
-    // Get tip id with regex. If it's the sentinel, it's a new tip, so create an id for the tip.
+    let tipId = [...snippet.matchAll(tipIdLineRegex)][0][1];
+    const tipBody = snippet.replace(tipIdLineRegex, "");
 
-    let tipId = tipHtml.match(tipHtmlIdRegex)?.[1];
-    tipHtml = tipHtml.replace(tipHtmlIdRegex, "");
+    if (!tipId) {
+        throw new Error("Couldn't find tip id.");
+    }
+    else if (tipId?.includes(BLANK_ID_SENTINEL)) {
 
-    if (!tipId) throw new Error("Couldn't find tip id. It should be the first comment in a tip.");
-
+        if (tipBody.trim().length) {    
+            tipId = crypto.randomBytes(3).toString("hex");
+            snippet = snippet.replace(BLANK_ID_SENTINEL, tipId);
+        }
+        else {
+            continue;
+        }
+    }
+    processedMdSnippets.push(snippet);
+    
     const idLineNumber = getTipIdLineNumber(tipId);
-
-    processedTips.push({ tipId, tipHtml, idLineNumber });
+    const tipHtml = md.render(tipBody);
+    destructuredTips.push({ tipId, tipHtml, idLineNumber });
 }
 
-await fsp.writeFile("./source/data/tips-generated.json", JSON.stringify(processedTips, null, 4), { encoding: "utf8" });
+if (!processedMdSnippets[0].includes(BLANK_ID_SENTINEL)) {
+    processedMdSnippets.unshift(blankSnippet);
+}
+if (!processedMdSnippets[processedMdSnippets.length - 1].includes(BLANK_ID_SENTINEL)) {
+    processedMdSnippets.push(blankSnippet);
+}
+
+const processedMd = processedMdSnippets.join("---") + "---";
+await fsp.writeFile("./source/tips.md", processedMd, { encoding: "utf8" });
+
+
+await fsp.writeFile("./source/data/tips-generated.json", JSON.stringify(destructuredTips, null, 4), { encoding: "utf8" });
