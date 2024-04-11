@@ -9,9 +9,11 @@
     "preview": "vite preview",
     "start:dev": "ts-node",
     "test": "echo no tests yet",
+    "lint:style": "npx eslint --fix",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source"
   },
   "devDependencies": {
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "@stylistic/eslint-plugin": "^1.7.0",
     "@swc/core": "^1.3.101",
     "@types/core-js": "^2.5.8",

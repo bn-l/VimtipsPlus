@@ -1,11 +1,10 @@
-import "./css/App.css";
+// import "./css/App.css";
 import TipBody from "./TipBody.tsx";
 import tips from "./data/tips-generated.json";
-import Logo from "./Logo.tsx";
 import VimTerminal from "./VimTerminal.tsx";
-import ByLine from "./ByLine.tsx";
+import logo from "./images/logo128.webp";
+import DarkmodeSelector from "./DarkmodeSelector.tsx";
 
-import { presetUno } from "unocss";
 import { useState, useEffect } from "react";
 
 
@@ -13,7 +12,7 @@ const repoLink = "https://github.com/bn-l/vimtips-plus";
 const getEditLink = (idLineNumber: number) => `https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L${ idLineNumber }`;
 
 
-function App() {
+export default function App() {
 
     const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
     const [popupVisible, setPopupVisible] = useState(false);
@@ -25,28 +24,48 @@ function App() {
         document.title = `New Tab - VimTips Plus- Tip #${ tips[tipIndex].tipId }`;
     }, [tipIndex]);
 
+
     return (
-        <div id="app">
-            <div>
-                <Logo />
+        <div id="app" className="flex-exp-col h-screen dark:bg-black light:bg-lightBlue">
+
+            <div className="flex-exp-row">
+                <div className="p-5 brightness-100 contrast-50">
+                    <img
+                        className="h-16 drop-shadow-lg"
+                        id="logo" 
+                        src={logo} 
+                        alt="VimTipsPLUS logo"
+                    />
+                </div>
+
+                <div className="">
+                    <DarkmodeSelector />
+                </div>
             </div>
 
-            <TipBody 
-                tipHtml={tipHtml}
-            />
+            <div className="flex flex-1 flex-col self-center flex-center p-5 sm:w-50%">
 
-            <VimTerminal 
-                termVisible={termVisible} 
-                setTermVisible={setTermVisible}
-            />
+                <div className="text-xl">
+                    <TipBody 
+                        tipHtml={tipHtml}
+                    />
+                </div>
+                <div className="pb-20 pt-2">
+                    <VimTerminal 
+                        termVisible={termVisible} 
+                        setTermVisible={setTermVisible}
+                    />
+                </div>
+            </div>
 
-            <ByLine
-                tipId={tipId}
-                editLink={getEditLink(idLineNumber)}
-                repoLink={repoLink}
-            />
+            <div className="flex place-self-end flex-row gap-3 text-sm text-slate-500 p-5">
+
+                <div className="">Tip ID#: {tipId}</div>
+                <div><a href={getEditLink(idLineNumber)} className="text-slate-400 font-bold">edit</a></div>
+                <div><a href={repoLink} className="text-slate-400 font-bold">VimTipsPLUS</a></div> 
+                <div>by bn-l</div>
+            </div>
         </div>
     );
 }
 
-export default App;
