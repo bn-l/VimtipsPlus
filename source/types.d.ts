@@ -4,3 +4,8 @@ interface Tip {
     tipHtml: string;
     idLineNumber: number;
 }
+
+interface Shortcut {
+    name: string;
+    shortcut: string;
+}

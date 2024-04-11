@@ -9,8 +9,7 @@
     "preview": "vite preview",
     "start:dev": "ts-node",
     "test": "echo no tests yet",
-    "lint": "npx eslint --ext .mts",
-    "publish-ci": "tsx scripts/publish-ci.ts"
+    "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
@@ -39,6 +38,7 @@
     "tsx": "^4.7.2",
     "turndown": "^7.1.3",
     "typescript": "^5.2.2",
+    "unocss": "^0.59.0",
     "vite": "^5.2.0",
     "wrap-ansi": "^9.0.0"
   },
