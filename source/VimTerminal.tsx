@@ -20,7 +20,10 @@ export default function VimTerminal({ termVisible, setTermVisible }: { termVisib
 
     if (!termVisible) {
         return (
-            <button onClick={() => setTermVisible(true)}>Show Terminal</button>
+            <button 
+                className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
+                onClick={() => setTermVisible(true)}
+            >show terminal</button>
         );
     }
 
