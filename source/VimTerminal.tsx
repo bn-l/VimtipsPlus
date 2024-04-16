@@ -4,8 +4,11 @@ import vimWorkerPath from "vim-wasm/vim.js?url";
 import { useRef, useEffect, useState } from "react";
 
 
-export default function VimTerminal({ termVisible, setTermVisible }: { termVisible: boolean; setTermVisible: (show: boolean) => void }) {
-    
+
+
+export default function VimTerminal() {
+
+    const [termVisible, setTermVisible] = useState(true);
     const vimRef = useRef<VimWasm | null>(null);
        
     useEffect(() => {

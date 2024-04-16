@@ -17,7 +17,7 @@ export default function App() {
 
     const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
     const [popupVisible, setPopupVisible] = useState(false);
-    const [termVisible, setTermVisible] = useState(false);
+
 
     const { tipId, tipHtml, idLineNumber } = tips[tipIndex];
     
@@ -59,10 +59,7 @@ export default function App() {
                     />
                 </div>
                 <div className="pb-20 pt-2">
-                    <VimTerminal 
-                        termVisible={termVisible} 
-                        setTermVisible={setTermVisible}
-                    />
+                    <VimTerminal />
                 </div>
             </div>
 
