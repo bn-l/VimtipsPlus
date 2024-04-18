@@ -706,16 +706,8 @@ before the character your cursor was over.
 
 <!-- 0ee094 -->
 
-m is for marking spots (which you can think of as bookmarks in your files). It
-does not do anything by itself.
-
-
----
-
-
-<!-- d62145 -->
-
-`mk` mark spot as k.
+`m` plus a letter is for marking. E.g.: `mk` makes a mark "k". Apostrophe (') or backtick (`) + "k"
+will jump back to the mark.
 
 
 ---

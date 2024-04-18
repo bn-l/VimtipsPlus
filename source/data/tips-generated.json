@@ -426,632 +426,622 @@
     },
     {
         "tipId": "0ee094",
-        "tipHtml": "<p>m is for marking spots (which you can think of as bookmarks in your files). It\ndoes not do anything by itself.</p>\n",
+        "tipHtml": "<p><code>m</code> plus a letter is for marking. E.g.: <code>mk</code> makes a mark &quot;k&quot;. Apostrophe (') or backtick (`) + &quot;k&quot;\nwill jump back to the mark.</p>\n",
         "idLineNumber": 707
-    },
-    {
-        "tipId": "d62145",
-        "tipHtml": "<p><code>mk</code> mark spot as k.</p>\n",
-        "idLineNumber": 716
     },
     {
         "tipId": "14a089",
         "tipHtml": "<p><code>'k</code> return the cursor to the spot you marked as “k”.</p>\n",
-        "idLineNumber": 724
+        "idLineNumber": 716
     },
     {
         "tipId": "9de192",
         "tipHtml": "<p><code>d'k</code> delete from the cursor’s position to the spot you marked as “k”.</p>\n",
-        "idLineNumber": 732
+        "idLineNumber": 724
     },
     {
         "tipId": "04f023",
         "tipHtml": "<p><code>c'k</code> change from the cursor’s position to the spot you marked as “k”.</p>\n",
-        "idLineNumber": 740
+        "idLineNumber": 732
     },
     {
         "tipId": "f03411",
         "tipHtml": "<p><code>y'k</code> yank/copy from the cursor’s position to the spot you marked as “k”.</p>\n",
-        "idLineNumber": 748
+        "idLineNumber": 740
     },
     {
         "tipId": "dfc7e0",
         "tipHtml": "<p><code>M</code> Move cursor to middle of window.</p>\n",
-        "idLineNumber": 756
+        "idLineNumber": 748
     },
     {
         "tipId": "5cf5f1",
         "tipHtml": "<p><code>n</code> moves forward to next match of a search pattern.</p>\n",
-        "idLineNumber": 764
+        "idLineNumber": 756
     },
     {
         "tipId": "444f1a",
         "tipHtml": "<p><code>N</code> moves backwards to previous match of a search pattern.</p>\n",
-        "idLineNumber": 772
+        "idLineNumber": 764
     },
     {
         "tipId": "9a0a42",
         "tipHtml": "<p><code>gn</code> search forward for the last used search pattern.</p>\n",
-        "idLineNumber": 780
+        "idLineNumber": 772
     },
     {
         "tipId": "55719a",
         "tipHtml": "<p><code>o</code> Opens a new line below where your cursor is and places you in insert mode.</p>\n",
-        "idLineNumber": 788
+        "idLineNumber": 780
     },
     {
         "tipId": "26e943",
         "tipHtml": "<p><code>O</code> Opens a new line above where your cursor is and places you in insert mode.</p>\n",
-        "idLineNumber": 796
+        "idLineNumber": 788
     },
     {
         "tipId": "35302e",
         "tipHtml": "<p><code>CTRL-o</code> Go backwards in the jumplist (list of where your cursor has been).\nTrust me this is like movement steroids.</p>\n",
-        "idLineNumber": 804
+        "idLineNumber": 796
     },
     {
         "tipId": "665e8a",
         "tipHtml": "<p><code>12CTRL-o</code> You can also pass it a count so this will go backwards in the\njumplist 12 spots.</p>\n",
-        "idLineNumber": 813
+        "idLineNumber": 805
     },
     {
         "tipId": "8244bf",
         "tipHtml": "<p><code>:only</code> Closes all splits except for the current one.</p>\n",
-        "idLineNumber": 822
+        "idLineNumber": 814
     },
     {
         "tipId": "ed1395",
         "tipHtml": "<p>Paste is a pretty big deal when you are dealing with code. So p should be one of\nyour best friends.</p>\n",
-        "idLineNumber": 830
+        "idLineNumber": 822
     },
     {
         "tipId": "b3cb7a",
         "tipHtml": "<p><code>p</code> pastes in the last thing you yanked or deleted (copied or cut) after the\ncursor.</p>\n",
-        "idLineNumber": 839
+        "idLineNumber": 831
     },
     {
         "tipId": "953862",
         "tipHtml": "<p><code>P</code> pastes in the last thing you yanked or deleted (copied or cut) before the\ncursor.</p>\n",
-        "idLineNumber": 848
+        "idLineNumber": 840
     },
     {
         "tipId": "a5b749",
         "tipHtml": "<p><code>2p</code> pastes in the last thing you yanked or deleted (copied or cut) twice.</p>\n",
-        "idLineNumber": 857
+        "idLineNumber": 849
     },
     {
         "tipId": "48555e",
         "tipHtml": "<p><code>xp</code> this will swap two characters. Technically it just deletes the character\nunder your cursor, then pastes it back in. This is the equivalent of <code>dlp</code>.</p>\n",
-        "idLineNumber": 865
+        "idLineNumber": 857
     },
     {
         "tipId": "4bad24",
         "tipHtml": "<p><code>&quot;*p</code> Pastes in text from your system clipboard.</p>\n",
-        "idLineNumber": 874
+        "idLineNumber": 866
     },
     {
         "tipId": "b0819c",
         "tipHtml": "<p><code>&quot;2p</code> This will paste in text from the second register. You will use this all of\nthe time. Most useful when you delete something you want to paste, then delete\nsomething else. Move to the place where you want to paste text, hit p and go\n“doh”. Just remember <code>&quot;2p</code>.</p>\n",
-        "idLineNumber": 882
+        "idLineNumber": 874
     },
     {
         "tipId": "e7552b",
         "tipHtml": "<p><code>&quot;%p</code> Pastes in the name of the current file.</p>\n",
-        "idLineNumber": 893
+        "idLineNumber": 885
     },
     {
         "tipId": "09aa3d",
         "tipHtml": "<p><code>:212pu</code> Pastes in last copy or delete on line 212. 212 can be any line number.</p>\n",
-        "idLineNumber": 901
+        "idLineNumber": 893
     },
     {
         "tipId": "3cf668",
         "tipHtml": "<p><code>:42pu *</code> Pastes in system clipboard text at line 42.</p>\n",
-        "idLineNumber": 909
+        "idLineNumber": 901
     },
     {
         "tipId": "fb04b7",
         "tipHtml": "<p><code>&quot;/p</code> Pastes in your last search pattern.</p>\n",
-        "idLineNumber": 917
+        "idLineNumber": 909
     },
     {
         "tipId": "ebed70",
         "tipHtml": "<p><code>:&lt;c-r&gt;/</code> Pastes in your last search pattern when you are on the command line.</p>\n",
-        "idLineNumber": 925
+        "idLineNumber": 917
     },
     {
         "tipId": "54be36",
         "tipHtml": "<p><code>&quot;ap</code> Pastes in the contents of register a. To see a list of registers and what\nthey have in them, do <code>:reg</code> or <code>:registers</code>.</p>\n",
-        "idLineNumber": 933
+        "idLineNumber": 925
     },
     {
         "tipId": "41624e",
         "tipHtml": "<p><code>&quot;= 8*8&lt;CR&gt;p</code> Pastes in evaluation of the expression <code>8*8</code>. This could be any\nmaths you want. <code>=</code> is the expression register, which allows you to do\ncalculations. From normal mode you can launch it by hitting <code>&quot;=</code>.</p>\n",
-        "idLineNumber": 942
+        "idLineNumber": 934
     },
     {
         "tipId": "e7be72",
         "tipHtml": "<p>q records things - so it doesn’t do much on its own. You need to tell it what\nregister to store the recorded sequence in.</p>\n",
-        "idLineNumber": 952
+        "idLineNumber": 944
     },
     {
         "tipId": "358677",
         "tipHtml": "<p><code>qa</code> Begins recording into register a. Enter in keystrokes you want to save,\nthen hit <code>q</code> to end the recording.</p>\n",
-        "idLineNumber": 961
+        "idLineNumber": 953
     },
     {
         "tipId": "621750",
         "tipHtml": "<p><code>@a</code> Will play back what you just recorded into register a.</p>\n",
-        "idLineNumber": 970
+        "idLineNumber": 962
     },
     {
         "tipId": "7d0b84",
         "tipHtml": "<p><code>:q</code> quits file only if you have no unsaved changes.</p>\n",
-        "idLineNumber": 978
+        "idLineNumber": 970
     },
     {
         "tipId": "168906",
         "tipHtml": "<p><code>:q!</code> quits file without writing any of your changes.</p>\n",
-        "idLineNumber": 986
+        "idLineNumber": 978
     },
     {
         "tipId": "17ffb6",
         "tipHtml": "<p><code>:wq</code> saves and quits file.</p>\n",
-        "idLineNumber": 994
+        "idLineNumber": 986
     },
     {
         "tipId": "8bfa64",
         "tipHtml": "<p><code>:12,42wq</code> saves lines 12 to 42 and quits file.</p>\n",
-        "idLineNumber": 1002
+        "idLineNumber": 994
     },
     {
         "tipId": "791fa0",
         "tipHtml": "<p><code>:wqa</code> saves and quits all files in buffer.</p>\n",
-        "idLineNumber": 1010
+        "idLineNumber": 1002
     },
     {
         "tipId": "c1af10",
         "tipHtml": "<p><code>r</code> Replaces character under cursor with next input i.e.</p>\n",
-        "idLineNumber": 1018
+        "idLineNumber": 1010
     },
     {
         "tipId": "70e4cd",
         "tipHtml": "<p><code>ra</code> Replaces the character under the cursor with a.</p>\n",
-        "idLineNumber": 1026
+        "idLineNumber": 1018
     },
     {
         "tipId": "625a0c",
         "tipHtml": "<p><code>R</code> Enter “replace mode” which is like insert mode except you will overwrite\ncharacters instead of insert between them.</p>\n",
-        "idLineNumber": 1034
+        "idLineNumber": 1026
     },
     {
         "tipId": "9385e9",
         "tipHtml": "<p><code>:r filename</code> Read the contents of filename and place into the current buffer.</p>\n",
-        "idLineNumber": 1043
+        "idLineNumber": 1035
     },
     {
         "tipId": "f1ce9a",
         "tipHtml": "<p><code>:r !ls</code> Pastes in the output of ls. ! calls an external process in vim. So this\ncan be pretty userful.</p>\n",
-        "idLineNumber": 1051
+        "idLineNumber": 1043
     },
     {
         "tipId": "cae396",
         "tipHtml": "<p><code>:r !cd -; ls</code> Pastes in the directory listing of the last directory you were\nin.</p>\n",
-        "idLineNumber": 1060
+        "idLineNumber": 1052
     },
     {
         "tipId": "192dd8",
         "tipHtml": "<p><code>:r !w3m -dump http://somewebsite.com</code> Pastes in the content from\nsomewebsite.com without any of the markup. Must have w3m installed. WHICH YOU\nSHOULD :) If you have homebrew installed you can simply run <code>brew install w3m</code>.</p>\n",
-        "idLineNumber": 1069
+        "idLineNumber": 1061
     },
     {
         "tipId": "8e0269",
         "tipHtml": "<p><code>:r !tree</code> Pastes in the output from running tree on a directory.</p>\n",
-        "idLineNumber": 1079
+        "idLineNumber": 1071
     },
     {
         "tipId": "95e422",
         "tipHtml": "<p><code>:reg</code> or <code>:registers</code> Print out a list of available registers and their\ncontents. Registers are like a multi-shelf clipboard. But it also stores all of\nyour recent deletes. In vim delete behaves more like cut than a true delete.</p>\n",
-        "idLineNumber": 1087
+        "idLineNumber": 1079
     },
     {
         "tipId": "fb9f73",
         "tipHtml": "<p><code>s</code> deletes the character your cursor is on and enters into insert mode.</p>\n",
-        "idLineNumber": 1097
+        "idLineNumber": 1089
     },
     {
         "tipId": "2769dd",
         "tipHtml": "<p><code>S</code> deletes the whole line you are on and enters into insert mode.</p>\n",
-        "idLineNumber": 1105
+        "idLineNumber": 1097
     },
     {
         "tipId": "9aceb4",
         "tipHtml": "<p><code>:sp</code> This will split the current window horizontally. Sp is short for split.</p>\n",
-        "idLineNumber": 1113
+        "idLineNumber": 1105
     },
     {
         "tipId": "9775b4",
         "tipHtml": "<p><code>:sp file.txt</code> This will split the current window horizontally with a file named\nfile.txt.</p>\n",
-        "idLineNumber": 1121
+        "idLineNumber": 1113
     },
     {
         "tipId": "aef811",
         "tipHtml": "<p><code>:vsp file.txt</code> This will split the current window vertically. vsp stands for\nvertical split.</p>\n",
-        "idLineNumber": 1130
+        "idLineNumber": 1122
     },
     {
         "tipId": "b0f013",
         "tipHtml": "<p>s is how you do find and replace, so let’s just say it is all of the important.</p>\n",
-        "idLineNumber": 1139
+        "idLineNumber": 1131
     },
     {
         "tipId": "b84456",
         "tipHtml": "<p><code>:s/foo/bar</code> replaces foo with bar on the current line for the first occurance\nof foo.</p>\n",
-        "idLineNumber": 1147
+        "idLineNumber": 1139
     },
     {
         "tipId": "6b0e0f",
         "tipHtml": "<p><code>:12,42s/foo/bar</code> replaces foo with bar on lines 12,42 for the first occurance\nof foo in each line.</p>\n",
-        "idLineNumber": 1156
+        "idLineNumber": 1148
     },
     {
         "tipId": "0610c7",
         "tipHtml": "<p><code>:12,42s/foo/bar/g</code> replaces all occurances of foo with bar on lines 12,42.</p>\n",
-        "idLineNumber": 1165
+        "idLineNumber": 1157
     },
     {
         "tipId": "1c3f6b",
         "tipHtml": "<p><code>:%s/foo/bar/g</code> replaces all occurances of foo with bar for the entire file.</p>\n",
-        "idLineNumber": 1173
+        "idLineNumber": 1165
     },
     {
         "tipId": "afc365",
         "tipHtml": "<p><code>:'&lt;,'&gt;s/foo/bar/g</code> replaces all occurances of foo with bar for the last visual\nselection.</p>\n",
-        "idLineNumber": 1181
+        "idLineNumber": 1173
     },
     {
         "tipId": "7dc3f6",
         "tipHtml": "<p><code>:%~</code> Repeat last substitute with same substitute string but with last used\nsearch pattern across the entire file.</p>\n",
-        "idLineNumber": 1190
+        "idLineNumber": 1182
     },
     {
         "tipId": "0b036a",
         "tipHtml": "<p><code>:%s/\\ class=&quot;.*&quot;//g&quot;</code> Delete all classes in markup for the current file.</p>\n",
-        "idLineNumber": 1199
+        "idLineNumber": 1191
     },
     {
         "tipId": "593114",
         "tipHtml": "<p><code>:%s/\\ id=&quot;.*&quot;//g&quot;</code> Delete all ids in markup for the current file.</p>\n",
-        "idLineNumber": 1207
+        "idLineNumber": 1199
     },
     {
         "tipId": "6e578b",
         "tipHtml": "<p><code>:bufdo %s/\\ class=&quot;.*&quot;//ge | update</code> Delete all classes in markup for all files\nin buffer.</p>\n",
-        "idLineNumber": 1215
+        "idLineNumber": 1207
     },
     {
         "tipId": "f54f5a",
         "tipHtml": "<p><code>:tabdo %s/\\ class=&quot;.*&quot;//ge | update</code> Delete all classes in markup for all files\nin the current tab.</p>\n",
-        "idLineNumber": 1224
+        "idLineNumber": 1216
     },
     {
         "tipId": "5e8146",
         "tipHtml": "<p><code>:%s/\\s\\+$//e</code> Removes trailing whitespace.</p>\n",
-        "idLineNumber": 1233
+        "idLineNumber": 1225
     },
     {
         "tipId": "83608a",
         "tipHtml": "<p><code>t</code> means ‘til’ so it doesn’t do anything on its own. It is very similar to f\nbut f is inclusive. T is exclusive meaning it will stop before the character you\nare finding.</p>\n",
-        "idLineNumber": 1241
+        "idLineNumber": 1233
     },
     {
         "tipId": "6dc836",
         "tipHtml": "<p><code>tf</code> put cursor one character before the next occurance of f.</p>\n",
-        "idLineNumber": 1251
+        "idLineNumber": 1243
     },
     {
         "tipId": "6c32fb",
         "tipHtml": "<p><code>;</code> repeat latest f, F, t, or T.</p>\n",
-        "idLineNumber": 1259
+        "idLineNumber": 1251
     },
     {
         "tipId": "84b943",
         "tipHtml": "<p><code>,</code> repeat it in the opposite direction.</p>\n",
-        "idLineNumber": 1267
+        "idLineNumber": 1259
     },
     {
         "tipId": "a89431",
         "tipHtml": "<p><code>dt&lt;</code> Delete up until the next <code>&lt;</code>. This is handy in the markup world.</p>\n",
-        "idLineNumber": 1275
+        "idLineNumber": 1267
     },
     {
         "tipId": "1c008e",
         "tipHtml": "<p><code>dt&quot;</code> Delete from cursor until next “.</p>\n",
-        "idLineNumber": 1283
+        "idLineNumber": 1275
     },
     {
         "tipId": "07ceee",
         "tipHtml": "<p><code>dT}</code> Delete backwards from cursor until previous }.</p>\n",
-        "idLineNumber": 1291
+        "idLineNumber": 1283
     },
     {
         "tipId": "ae05f4",
         "tipHtml": "<p><code>u</code> Undo changes.</p>\n",
-        "idLineNumber": 1299
+        "idLineNumber": 1291
     },
     {
         "tipId": "9bd5a6",
         "tipHtml": "<p><code>U</code> Undo all latest changes on one line, the line where the latest change was\nmade.</p>\n",
-        "idLineNumber": 1307
+        "idLineNumber": 1299
     },
     {
         "tipId": "862678",
         "tipHtml": "<p><code>&lt;C-r&gt;</code> Redo changes.</p>\n",
-        "idLineNumber": 1316
+        "idLineNumber": 1308
     },
     {
         "tipId": "11a814",
         "tipHtml": "<p><code>&lt;C-u&gt;</code> Scroll window upwards to the amount set by the “scroll” option. Default\nis half a screen.</p>\n",
-        "idLineNumber": 1324
+        "idLineNumber": 1316
     },
     {
         "tipId": "86e32c",
         "tipHtml": "<p><code>:undol</code> List all the history points in your tree of changes.</p>\n",
-        "idLineNumber": 1333
+        "idLineNumber": 1325
     },
     {
         "tipId": "817886",
         "tipHtml": "<p><code>v</code> Start visual mode on a per character basis.</p>\n",
-        "idLineNumber": 1341
+        "idLineNumber": 1333
     },
     {
         "tipId": "30e192",
         "tipHtml": "<p><code>V</code> Starts visual mode linewise (selects whole lines).</p>\n",
-        "idLineNumber": 1349
+        "idLineNumber": 1341
     },
     {
         "tipId": "0a8734",
         "tipHtml": "<p><code>CTRL-v</code> Starts visual mode blockwise (very favorite).</p>\n",
-        "idLineNumber": 1357
+        "idLineNumber": 1349
     },
     {
         "tipId": "027b9a",
         "tipHtml": "<p><code>gv</code> Reselect last visual selection.</p>\n",
-        "idLineNumber": 1365
+        "idLineNumber": 1357
     },
     {
         "tipId": "eb6afa",
         "tipHtml": "<p><code>w</code> Moves to the next word.</p>\n",
-        "idLineNumber": 1373
+        "idLineNumber": 1365
     },
     {
         "tipId": "c68994",
         "tipHtml": "<p><code>3w</code> Moves to the third word.</p>\n",
-        "idLineNumber": 1381
+        "idLineNumber": 1373
     },
     {
         "tipId": "da8c6e",
         "tipHtml": "<p><code>x</code> delete character under your cursor.</p>\n",
-        "idLineNumber": 1389
+        "idLineNumber": 1381
     },
     {
         "tipId": "663968",
         "tipHtml": "<p><code>X</code> this will delete a character before the cursor. Same as <code>dh</code>.</p>\n",
-        "idLineNumber": 1397
+        "idLineNumber": 1389
     },
     {
         "tipId": "f4daad",
         "tipHtml": "<p>y stands for copy, I mean yank. It doesn’t do anything by itself. It is very\nsimilar to c and d in how it can be used.</p>\n",
-        "idLineNumber": 1405
+        "idLineNumber": 1397
     },
     {
         "tipId": "64a8b1",
         "tipHtml": "<p><code>yy</code> Copies current line.</p>\n",
-        "idLineNumber": 1414
+        "idLineNumber": 1406
     },
     {
         "tipId": "8f8142",
         "tipHtml": "<p><code>&quot;xyy</code> Copies current line into register x.</p>\n",
-        "idLineNumber": 1422
+        "idLineNumber": 1414
     },
     {
         "tipId": "873598",
         "tipHtml": "<p><code>&quot;jY</code> Copies current line into register j. If you like “Y” to work from the\ncursor to the end of line (which is more logical, but not Vi-compatible) use\n“:map Y y$”.</p>\n",
-        "idLineNumber": 1430
+        "idLineNumber": 1422
     },
     {
         "tipId": "6061b0",
         "tipHtml": "<p><code>:12,112y</code> Copies lines 12 through 112.</p>\n",
-        "idLineNumber": 1440
+        "idLineNumber": 1432
     },
     {
         "tipId": "40d027",
         "tipHtml": "<p><code>mk { motion } y'k</code> Mark a spot k, navigate to a new spot and then copies from\nmark k to the current position of your cursor.</p>\n",
-        "idLineNumber": 1448
+        "idLineNumber": 1440
     },
     {
         "tipId": "c42278",
         "tipHtml": "<p><code>yt&quot;</code> Copies from current cursor postion to the next quote on the same line.</p>\n",
-        "idLineNumber": 1457
+        "idLineNumber": 1449
     },
     {
         "tipId": "efb8d9",
         "tipHtml": "<p><code>yt&gt;</code> Copies from current cursor postion to the next &gt; on the same line.</p>\n",
-        "idLineNumber": 1465
+        "idLineNumber": 1457
     },
     {
         "tipId": "57914c",
         "tipHtml": "<p><code>yT&gt;</code> Copies from current cursor postion to the previous &gt; on the same line.</p>\n",
-        "idLineNumber": 1473
+        "idLineNumber": 1465
     },
     {
         "tipId": "e00015",
         "tipHtml": "<p><code>yf&gt;</code> Copies from current cursor postion up to and including the next &gt; on the\nsame line.</p>\n",
-        "idLineNumber": 1481
+        "idLineNumber": 1473
     },
     {
         "tipId": "d4d2af",
         "tipHtml": "<p><code>yF&gt;</code> Copies from current cursor postion up to and including the previous &gt; on\nthe same line.</p>\n",
-        "idLineNumber": 1490
+        "idLineNumber": 1482
     },
     {
         "tipId": "3bf45e",
         "tipHtml": "<p><code>&lt;C-y&gt;</code> Scroll up by 1 line.</p>\n",
-        "idLineNumber": 1499
+        "idLineNumber": 1491
     },
     {
         "tipId": "ea8d99",
         "tipHtml": "<p><code>12&lt;C-y&gt;</code> Scroll up 12 lines.</p>\n",
-        "idLineNumber": 1507
+        "idLineNumber": 1499
     },
     {
         "tipId": "aa57a7",
         "tipHtml": "<p><code>z&lt;CR&gt;</code> Redraws the screen so that your cursor line is at the top of the window.\nSame as <code>zt</code>.</p>\n",
-        "idLineNumber": 1515
+        "idLineNumber": 1507
     },
     {
         "tipId": "112244",
         "tipHtml": "<p><code>z-</code> Redraws the screen so that your cursor line is at the bottom of the window.\nSame as <code>zb</code>.</p>\n",
-        "idLineNumber": 1524
+        "idLineNumber": 1516
     },
     {
         "tipId": "a7d740",
         "tipHtml": "<p><code>zz</code> Redraws the screen so that your cursor line is at the middle of the window.</p>\n",
-        "idLineNumber": 1533
+        "idLineNumber": 1525
     },
     {
         "tipId": "622159",
         "tipHtml": "<p><code>*</code> search forward for the word under cursor in current file. Super useful for\nfinding common hex codes in css. And other things.</p>\n",
-        "idLineNumber": 1541
+        "idLineNumber": 1533
     },
     {
         "tipId": "87d075",
         "tipHtml": "<p><code>#</code> search backward for the word under cursor in current file.</p>\n",
-        "idLineNumber": 1550
+        "idLineNumber": 1542
     },
     {
         "tipId": "a8b543",
         "tipHtml": "<p><code>/</code> Forward search for things.</p>\n",
-        "idLineNumber": 1558
+        "idLineNumber": 1550
     },
     {
         "tipId": "7f4c9b",
         "tipHtml": "<p><code>/&lt;p&gt;</code> Forward search for the next opening paragraph tag.</p>\n",
-        "idLineNumber": 1566
+        "idLineNumber": 1558
     },
     {
         "tipId": "80037d",
         "tipHtml": "<p><code>/\\</code> Forward search for the next space.</p>\n",
-        "idLineNumber": 1574
+        "idLineNumber": 1566
     },
     {
         "tipId": "0de26d",
         "tipHtml": "<p><code>/^}</code> Forward search for closing bracket of a css class, if the css class is\nclosed at the beginning of a new line i.e.</p>\n",
-        "idLineNumber": 1582
+        "idLineNumber": 1574
     },
     {
         "tipId": "bf8b4b",
         "tipHtml": "<p><code>?</code> Backwards search.</p>\n",
-        "idLineNumber": 1591
+        "idLineNumber": 1583
     },
     {
         "tipId": "fea3cb",
         "tipHtml": "<p><code>?http</code> Search backwards for the string <code>http</code>.</p>\n",
-        "idLineNumber": 1599
+        "idLineNumber": 1591
     },
     {
         "tipId": "008f67",
         "tipHtml": "<p><code>==</code> Format current line of code.</p>\n",
-        "idLineNumber": 1607
+        "idLineNumber": 1599
     },
     {
         "tipId": "bb94cb",
         "tipHtml": "<p><code>&gt;&gt;</code> Indent current line.</p>\n",
-        "idLineNumber": 1615
+        "idLineNumber": 1607
     },
     {
         "tipId": "9e0b0b",
         "tipHtml": "<p><code>.</code> Repeat last change.</p>\n",
-        "idLineNumber": 1623
+        "idLineNumber": 1615
     },
     {
         "tipId": "dfc76b",
         "tipHtml": "<p><code>@:</code> Repeat last command line.</p>\n",
-        "idLineNumber": 1631
+        "idLineNumber": 1623
     },
     {
         "tipId": "f9e2ad",
         "tipHtml": "<p><code>:set paste</code> Set this if you are pasting in content from the system clipboard.\nTrust me.</p>\n",
-        "idLineNumber": 1639
+        "idLineNumber": 1631
     },
     {
         "tipId": "1ee0ae",
         "tipHtml": "<p><code>:set paste!</code> Using ! at the end of any set reverses the current setting. This\nis useful so that you only have to remember one command and you never have to\nremember current state. For instance to be able to see line numbers you can do\n<code>:set nu</code> or <code>:set number</code>. To undo these commands, you would set <code>:set nonu</code> or\n<code>:set nonumber</code>. This seems like a lot to remember. An alternative is using !\nlike so <code>:set nu!</code> This will reverse whatever state set number currently\nresolves to. If line numbers are currently shown, they will be hidden. If they\nare hidden, they will become revealed. I use this pattern a lot when changing\nsettings of file.</p>\n",
-        "idLineNumber": 1648
+        "idLineNumber": 1640
     },
     {
         "tipId": "30dd76",
         "tipHtml": "<p><code>:12,54=</code> Format lines 12 through 54.</p>\n",
-        "idLineNumber": 1664
+        "idLineNumber": 1656
     },
     {
         "tipId": "8a782b",
         "tipHtml": "<p><code>:56,99&gt;</code> Indent lines 56 through 99.</p>\n",
-        "idLineNumber": 1672
+        "idLineNumber": 1664
     },
     {
         "tipId": "19b8f9",
         "tipHtml": "<p><code>:52,84y</code> Yank / copy lines 52 through 84.</p>\n",
-        "idLineNumber": 1680
+        "idLineNumber": 1672
     },
     {
         "tipId": "6d9f6e",
         "tipHtml": "<p><code>12&gt;&gt;</code> Indent 12 lines including the line you are on.</p>\n",
-        "idLineNumber": 1688
+        "idLineNumber": 1680
     },
     {
         "tipId": "f7977f",
         "tipHtml": "<p>Remember <code>&lt;C-</code> means the control key. So <code>&lt;C-b&gt;</code> would translate to pressing\ncontrol and b at the same time.</p>\n",
-        "idLineNumber": 1696
+        "idLineNumber": 1688
     },
     {
         "tipId": "df2793",
         "tipHtml": "<p><code>&lt;C-b&gt;</code> Scroll backwards one full screen.</p>\n",
-        "idLineNumber": 1705
+        "idLineNumber": 1697
     },
     {
         "tipId": "095a00",
         "tipHtml": "<p><code>&lt;C-u&gt;</code> Scroll backwards or ‘up’ a half screen.</p>\n",
-        "idLineNumber": 1713
+        "idLineNumber": 1705
     },
     {
         "tipId": "328b9f",
         "tipHtml": "<p><code>&lt;C-d&gt;</code> Scroll forwards or ‘down’ a half screen.</p>\n",
-        "idLineNumber": 1721
+        "idLineNumber": 1713
     },
     {
         "tipId": "f3baa2",
         "tipHtml": "<p><code>&lt;C-f&gt;</code> Scroll forwards.</p>\n",
-        "idLineNumber": 1729
+        "idLineNumber": 1721
     },
     {
         "tipId": "44c4d0",
         "tipHtml": "<p><code>&lt;C-y&gt;</code> Scroll backwards count lines (defaults to one).</p>\n",
-        "idLineNumber": 1737
+        "idLineNumber": 1729
     },
     {
         "tipId": "3e9bac",
         "tipHtml": "<p><code>&lt;C-e&gt;</code> Scroll forwards one full line.</p>\n",
-        "idLineNumber": 1745
+        "idLineNumber": 1737
     },
     {
         "tipId": "3fa7dc",
         "tipHtml": "<p><code>&lt;C-y&gt;</code> Scroll backwards one full line.</p>\n",
-        "idLineNumber": 1753
-    },
-    {
-        "tipId": "17fd36",
-        "tipHtml": "<p>sdsd</p>\n",
-        "idLineNumber": 0
+        "idLineNumber": 1745
     }
 ]
