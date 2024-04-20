@@ -12,11 +12,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    background-color: #FAFAFA;
+    
+    --light-bg: white;
+    --dark-bg: black;
+
+    background-color: var(--light-bg)
 }
 
 :root.dark {
-    background-color: #3C3C3C;
+    background-color: var(--dark-bg)
 }
 
 body {
@@ -29,11 +33,11 @@ code {
     'DejaVu Sans Mono', Menlo, Consolas, monospace;
     padding: 0.2em;
     border-radius: 0.4em;
-    background-color: #bfbfbf24;
+    background-color: #f2f2f2;
 }
 
 :root.dark code {
-    background-color: #00000024;
+    background-color: #23221d;
 }
 
 
@@ -45,10 +49,14 @@ code {
 #vim-terminal {
 
     text-align: center;
-    background-color: #00000000;
     align-content: center;
     justify-items: center;
     position: relative;
+
+}
+
+#vim-terminal #vim-input:not(:focus) ~ #vim-canvas {
+    filter: drop-shadow(0 0 0 black) contrast(0.80)
 }
 
 #vim-canvas {
@@ -56,18 +64,25 @@ code {
     margin: 0px;
     width: calc(1.429 * 40vw);
     height: calc(1.429 * 40vh);
-    background-color: #333333;
     image-rendering: pixelated;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.283));
+
+    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
-@media screen and (max-width: 600px) {
+
+:root.dark #vim-canvas {
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.583));
+}
+
+
+@media screen and (max-width: 1024px) {
     #vim-canvas {
         padding: 10px;
         margin: 0px;
         width: calc(90vw - 50px);
         height: calc(60vh - 50px);
-        background-color: #333333;
     }
 }
 

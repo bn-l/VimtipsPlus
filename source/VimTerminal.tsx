@@ -103,6 +103,11 @@ export default function VimTerminal({theme, font}: VimTerminalProps) {
 
             });
 
+            vimRef.current.onVimExit = () => {
+                vimRef.current = null;
+                setTermLoaded(false);
+            };
+
             vimRef.current.focus();
         }   
     }, [termLoaded]);
@@ -110,10 +115,11 @@ export default function VimTerminal({theme, font}: VimTerminalProps) {
     useEffect(() => {
         // To save the result of :w calls to indexdb, need to :q
         //  this calls a quit before the tab is closed to sort of auto sync.
+        // Disabled as it causes an on quit call when refreshing
         const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-            if (vimRef.current?.isRunning()) {
-                void vimRef.current.cmdline("qall!");
-            }
+            // if (vimRef.current?.isRunning()) {
+            //     void vimRef.current.cmdline("qall!");
+            // }
         };
 
         const handleKeyPress = (event: KeyboardEvent) => {
@@ -135,14 +141,14 @@ export default function VimTerminal({theme, font}: VimTerminalProps) {
             <button 
                 className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
                 onClick={() => setTermLoaded(true)}
-            >show terminal (s)</button>
+            >load terminal (s)</button>
         );
     }
 
     return (
         <div id="vim-terminal" ref={divRef}>
-            <canvas id="vim-canvas" ref={canvasRef}></canvas>
             <input id="vim-input" autoFocus ref={inputRef} />
+            <canvas id="vim-canvas" ref={canvasRef}></canvas>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 
-import { defineConfig, presetMini, presetWind } from 'unocss'
+import { defineConfig, presetMini, presetWind, } from 'unocss'
 import fs from "fs";
+import colorTheme from "./source/colorTheme.json";
 
 export default defineConfig({
     rules: [
@@ -10,4 +11,5 @@ export default defineConfig({
 
         ["flex-exp-row", {"justify-content": "space-between", "flex-direction": "row", "display": "flex", "align-items": "center"}],
     ],
+    theme: colorTheme
 })

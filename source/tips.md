@@ -1061,8 +1061,7 @@ in.
 <!-- 192dd8 -->
 
 `:r !w3m -dump http://somewebsite.com` Pastes in the content from
-somewebsite.com without any of the markup. Must have w3m installed. WHICH YOU
-SHOULD :) If you have homebrew installed you can simply run `brew install w3m`.
+somewebsite.com without any of the markup. Must have w3m installed.
 
 
 ---

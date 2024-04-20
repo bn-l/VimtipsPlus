@@ -49,7 +49,7 @@
   "dependencies": {
     "@mui/base": "^5.0.0-beta.40",
     "@mui/material": "^5.15.15",
-    "clean-components": "^1.0.14",
+    "clean-components": "^1.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vim-wasm": "^0.0.13"
