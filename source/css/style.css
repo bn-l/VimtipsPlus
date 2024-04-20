@@ -1,6 +1,4 @@
 
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5,500&display=swap'); */
-
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -13,11 +11,31 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    background-color: #FAFAFA;
+}
+
+:root.dark {
+    background-color: #3C3C3C;
 }
 
 body {
     margin: 0;
 }
+
+code {
+    /* https://stackoverflow.com/a/64133415/2083958 */
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace,
+    'DejaVu Sans Mono', Menlo, Consolas, monospace;
+    padding: 0.2em;
+    border-radius: 0.4em;
+    background-color: #bfbfbf24;
+}
+
+:root.dark code {
+    background-color: #00000024;
+}
+
 
 #tip-html p {
     margin: 0 0 1em 0;
@@ -25,20 +43,21 @@ body {
 }
 
 #vim-terminal {
-    /* width: calc(70vw - 25px);
-    height: calc(60vh - 25px); */
+
     text-align: center;
     background-color: #00000000;
     align-content: center;
     justify-items: center;
+    position: relative;
 }
 
 #vim-canvas {
     padding: 0px;
     margin: 0px;
-    width: calc(70vw - 50px);
-    height: calc(60vh - 50px);
+    width: calc(1.429 * 40vw);
+    height: calc(1.429 * 40vh);
     background-color: #333333;
+    image-rendering: pixelated;
 }
 
 
@@ -69,6 +88,5 @@ body {
     padding: 0px;
     margin: 0px;
     position: absolute;
-    display: none; /* TODO */
+    display: none;
 }
-

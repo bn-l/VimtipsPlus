@@ -10,13 +10,4 @@ export default defineConfig({
 
         ["flex-exp-row", {"justify-content": "space-between", "flex-direction": "row", "display": "flex", "align-items": "center"}],
     ],
-    preflights: [
-        {
-          getCSS: ({ theme }) => `
-            code, pre {
-                border-radius: 3px;
-                background-color: ${theme.backgroundColor}
-            }`
-        },
-    ]
 })

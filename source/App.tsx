@@ -15,8 +15,6 @@ import { DarkModeSwitch } from "clean-components";
 
 // :e tutor - start "vim tutor"
 
-// These guys are also wrapping vim.wasm: https://github.com/programmerhat/vim-online-editor/blob/master/index.php
-// And doing some tricks for pasting (which might not be necessary)
 
 // See original project for extension related js etc
 
@@ -37,14 +35,46 @@ import { DarkModeSwitch } from "clean-components";
 
 
 
-const repoLink = "https://github.com/bn-l/VimtipsPlus";
-const getEditLink = (idLineNumber: number) => `https://github.com/bn-l/vimtips-plus/edit/main/source/tips.md?plain=1#L${ idLineNumber }`;
+
+
+const VIMTIPS_LINK = "https://github.com/bn-l/VimtipsPlus";
+const getEditLink = (idLineNumber: number) => `https://github.com/bn-l/VimtipsPlus/edit/main/source/tips.md?plain=1#L${ idLineNumber }`;
+
+const LIGHT_BG = "#FAFAFA"
+const DARK_BH = "#3C3C3C"
+
+// Need to escape spaces. Can be any font available to browser including (like below), a web font 
+// const font = "Consolas:h14";
+const font = "Noto\\ Sans\\ Mono:h14";
 
 
 export default function App() {
 
     const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
     const [popupVisible, setPopupVisible] = useState(false);
+    const [theme, setTheme] = useState<"light" | "dark">("light");
+
+    useEffect(() => {
+        document.documentElement.className.includes("dark") ? setTheme("dark") : setTheme("light");
+    });
+    
+    // Looks for a "light" / "dark" class being added to the root element.
+    
+    useEffect(() => {
+        const onMutated = function(mutationsList: MutationRecord[], observer: MutationObserver) {
+            for(const mutation of mutationsList) {
+                if(mutation.attributeName === "class") {
+                    const classList = (mutation.target as HTMLElement).className.split(/\s+/g);
+                    if (classList.includes("light")) setTheme("light");
+                    else if (classList.includes("dark")) setTheme("dark");
+                }
+            }
+        };
+        const observer = new MutationObserver(onMutated);
+        observer.observe(document.documentElement, { attributes: true });
+    
+        return () => { observer.disconnect(); };
+    }, []);
 
 
     const { tipId, tipHtml, idLineNumber } = tips[tipIndex];
@@ -53,12 +83,8 @@ export default function App() {
         document.title = `New Tab - VimTips Plus- Tip #${ tips[tipIndex].tipId }`;
     }, [tipIndex]);
 
-
-    const lightBg = "#FAFAFA"
-    const darkBg = "#3C3C3C"
-
     return (
-        <div id="app" className="flex-exp-col h-screen dark:bg-[#3C3C3C] bg-[#FAFAFA]">
+        <div id="app" className="flex-exp-col h-screen">
 
             <div className="flex-exp-row">
                 <div className="pl-5 pr-5 pt-5 brightness-100 contrast-100 grayscale-80">
@@ -72,21 +98,20 @@ export default function App() {
 
                 <div className="pr-10 drop-shadow-sm">
                     <DarkModeSwitch 
-                        lightColor="#FAFAFA" 
-                        darkColor="#3C3C3C"
+                        lightColor={LIGHT_BG} 
+                        darkColor={DARK_BH}
                     />
                 </div>
             </div>
 
-            {/* <div className="flex flex-col self-center flex-center sm:w-80% sm:h-50%"> */}
             <div className="flex flex-col self-center flex-center m-0 w-full">
 
-                <div className="text-xl text-slate-900 dark:text-zinc-100 w-80% text-center">
+                <div className="text-xl text-slate-900 dark:text-zinc-100 w-50% text-center">
                     <TipBody 
                         tipHtml={tipHtml}
                     />
                 </div>
-                <VimTerminal />
+                <VimTerminal font={font} theme={theme} />
             </div>
 
             <div className="flex place-self-end flex-row gap-3 text-sm text-slate-500 dark:text-zinc-400 p-5">
@@ -98,9 +123,9 @@ export default function App() {
                     >edit</a>
                 </div>
                 <div>
-                    <a href={repoLink} 
+                    <a href={VIMTIPS_LINK} 
                         className="text-stone-500 dark:text-zinc-400 no-underline"
-                    >VimTipsPLUS</a>
+                    >Vimtips Plus</a>
                 </div> 
                 <div>by bn-l</div>
             </div>

@@ -50,8 +50,8 @@
 
 <!-- e85d7f -->
 
-`c` stands for “change” will not do anything on its own, but acts as a modifier to
-other commands. Here are some common commands handy for editing front end code.
+`c` stands for “change”. It will not do anything on its own, but acts as a modifier to
+other commands.
 
 
 ---
@@ -1130,7 +1130,7 @@ vertical split.
 
 <!-- b0f013 -->
 
-s is how you do find and replace, so let’s just say it is all of the important.
+`s` is how you do find and replace, so let’s just say it is all of the important.
 
 
 ---
