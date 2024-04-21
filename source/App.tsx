@@ -2,7 +2,7 @@
 import TipBody from "./TipBody.tsx";
 import tips from "./data/tips-generated.json";
 import VimTerminal from "./VimTerminal.tsx";
-import logo from "./images/logo128.webp";
+import logo from "./images/logo.svg";
 
 import { Switch } from "@mui/base/Switch";
 import { useState, useEffect } from "react";
@@ -103,16 +103,16 @@ export default function App() {
         <div id="app" className="flex-exp-col h-screen">
 
             <div className="flex-exp-row">
-                <div className="pl-5 pr-5 pt-5 brightness-100 contrast-100 grayscale-80">
+                <div className="pl-5 pr-5 pt-5 brightness-100 contrast-30 grayscale-100 opacity-10">
                     <img
-                        className="h-16"
+                        className="h-12"
                         id="logo" 
                         src={logo} 
                         alt="VimTipsPLUS logo"
                     />
                 </div>
 
-                <div className="pr-10 drop-shadow-sm">
+                <div className="pt-8 pr-8 drop-shadow-sm">
                     <DarkModeSwitch 
                         lightColor={colorTheme.colors.light} 
                         darkColor={colorTheme.colors.dark}
