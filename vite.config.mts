@@ -7,11 +7,15 @@ const VSCOptions: ViteStaticCopyOptions = {
     targets: [
         {
           src: "node_modules/vim-wasm/vim.wasm",
-          dest: "assets"
+          dest: "assets",
         },
         {
           src: "node_modules/vim-wasm/vim.data",
           dest: "assets"
+        },
+        {
+            src: "netlify.toml",
+            dest: ""
         }
     ]
 }

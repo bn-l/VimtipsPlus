@@ -1,13 +1,36 @@
-# vimtips PLUS
+<div align="center">
 
-An enhancement to the vimtips extension (now not updated for 7 years). 
+<img src="./media/logo.svg" alt="VimTips Plus - Small vim tips with a vim terminal built in"  height="200px" />
 
-## Upgrades:
-- Vim editor in the new tab page: Practice the tip immediately.
-- Use the in-page editor as a place to save sticky notes.
-- More tips
-- Dark mode (including ALT+SHIFT+T shortcut)
+</div>
+<br />
+<div align="center">
 
-![Vim Tips Chrome Extension](screenshot.png)
+Vim tips with a built-in wasm implemention of vim. <br />
+Learn vim with daily small tips that you can practice in the browser right.
 
-Vim tips!
+</div>
+
+
+![Vim Tips Chrome Extension](./media/screencast.apng)
+
+
+## Usage:
+ - Click outside the terminal to defocus it. When the terminal has focus it will capture all key strokes
+- Type `:export` to download the current file
+- Drag and drop a file on the terminal to edit it
+- `:e tutor` to run the vim tutor
+
+
+## Shortcuts:
+(when terminal is unfocussed)
+
+|    Description      |       Shortcut           |
+|---------------------|--------------------------|
+| Toggle this help    |           ?              |
+| Load Vim Terminal   |           s              |
+| Random tip          |           +              |
+| Next tip            |           ]              |
+| Previous tip        |           [              |
+
+

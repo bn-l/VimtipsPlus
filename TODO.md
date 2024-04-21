@@ -13,3 +13,5 @@
     - Good algorithm (explore this, what's SOTA)
     - Very simple--just text and similar md sheet
 
+- Custom netlify url
+

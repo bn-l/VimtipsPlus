@@ -11,7 +11,8 @@
     "test": "echo no tests yet",
     "lint:style": "npx eslint --fix",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
-    "dev": "vite"
+    "dev": "vite",
+    "pub": "npx bumpp"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
@@ -25,6 +26,7 @@
     "@typescript-eslint/parser": "^7.5.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "bumpp": "^9.4.0",
     "cheerio": "^1.0.0-rc.12",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",

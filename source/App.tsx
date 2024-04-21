@@ -26,7 +26,7 @@ import colorTheme from "./colorTheme.json";
 // See: https://vitejs.dev/guide/static-deploy.html#netlify-with-git
 // for Netlify deployment.
 
-// need these headers for preview (plugin should work as can set headers)
+// need these headers for preview (plugin should work regardless as can set headers)
 // { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" },
 // { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" }
 
