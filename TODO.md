@@ -15,3 +15,7 @@
 
 - Custom netlify url
 
+- Update small logo, favicon
+
+
+

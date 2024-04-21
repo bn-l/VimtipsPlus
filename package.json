@@ -10,9 +10,9 @@
     "start:dev": "ts-node",
     "test": "echo no tests yet",
     "lint:style": "npx eslint --fix",
+    "pub": "npx bumpp",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
-    "dev": "vite",
-    "pub": "npx bumpp"
+    "dev": "vite"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
