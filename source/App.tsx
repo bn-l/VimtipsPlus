@@ -13,7 +13,6 @@ import Popup from "./Popup.tsx";
 
 import colorTheme from "./colorTheme.json";
 
-import { useSearchParams} from "react-router-dom";
 
 
 // wrap in try catch and set tip div to error message if one occurs
@@ -65,15 +64,7 @@ if(firstLoad) localStorage.setItem("loadedBefore", "true");
 
 export default function App() {
 
-    const [searchParams, setSearchParams] = useSearchParams();
-
-    const tipParam = searchParams.get("tip");
-    const tipParamIndex = tips.findIndex(tip => tip.tipId === tipParam);
-    const startingIndex = tipParamIndex > -1 ? 
-        tipParamIndex :
-        Math.floor(Math.random() * tips.length);
-
-    const [tipIndex, setTipIndex] = useState(startingIndex);
+    const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
     const [theme, setTheme] = useState<"light" | "dark">("light");
 
     useEffect(() => {
@@ -82,8 +73,6 @@ export default function App() {
     
     useEffect(() => {
         document.title = `New Tab - VimTips Plus- Tip #${ tips[tipIndex].tipId }`;
-
-        setSearchParams({ tip: tips[tipIndex].tipId });
     }, [tipIndex]);
 
     const randomTip = () => setTipIndex(Math.floor(Math.random() * tips.length));
