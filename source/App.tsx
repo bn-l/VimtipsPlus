@@ -7,10 +7,14 @@ import logo from "./images/logo.svg";
 import { Switch } from "@mui/base/Switch";
 import { useState, useEffect } from "react";
 import { DarkModeSwitch } from "clean-components";
+import an from "../vendor/google-analytics.ts";
 
 import Popup from "./Popup.tsx";
 
 import colorTheme from "./colorTheme.json";
+
+import { useSearchParams} from "react-router-dom";
+
 
 // wrap in try catch and set tip div to error message if one occurs
 
@@ -58,16 +62,35 @@ for (const [key, value] of Object.entries(globalCSSVars)) {
 const firstLoad = !localStorage.getItem("loadedBefore");
 if(firstLoad) localStorage.setItem("loadedBefore", "true");
 
+
 export default function App() {
 
-    const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const tipParam = searchParams.get("tip");
+    const tipParamIndex = tips.findIndex(tip => tip.tipId === tipParam);
+    const startingIndex = tipParamIndex > -1 ? 
+        tipParamIndex :
+        Math.floor(Math.random() * tips.length);
+
+    const [tipIndex, setTipIndex] = useState(startingIndex);
     const [theme, setTheme] = useState<"light" | "dark">("light");
 
+    useEffect(() => {
+        void an.pageView(document.title, document.location.href);
+    }, []);
+    
+    useEffect(() => {
+        document.title = `New Tab - VimTips Plus- Tip #${ tips[tipIndex].tipId }`;
+
+        setSearchParams({ tip: tips[tipIndex].tipId });
+    }, [tipIndex]);
 
     const randomTip = () => setTipIndex(Math.floor(Math.random() * tips.length));
     const nextTip = () => setTipIndex(index => (index + 1) % tips.length);
     const prevTip = () => setTipIndex(index => (index - 1 + tips.length) % tips.length);
     const toggleTheme = () =>  setTheme(theme => theme === "light" ? "dark" : "light");
+
 
     // ------------- Keyboard listeners start ------------- //
 
@@ -94,10 +117,6 @@ export default function App() {
     // ------------- Keyboard listeners end -------------- //
 
     const { tipId, tipHtml, idLineNumber } = tips[tipIndex];
-    
-    useEffect(() => {
-        document.title = `New Tab - VimTips Plus- Tip #${ tips[tipIndex].tipId }`;
-    }, [tipIndex]);
 
     return (
         <div id="app" className="flex-exp-col h-screen">
@@ -128,7 +147,7 @@ export default function App() {
                         tipHtml={tipHtml}
                     />
                 </div>
-                <VimTerminal font={font} theme={theme} />
+                <VimTerminal font={font} theme={theme} loadCallback={() => an.event("vim_loaded")} />
             </div>
 
             <div className="flex place-self-end flex-row gap-3 text-xs text-slate-500 dark:text-zinc-400 p-5 sm:text-sm">

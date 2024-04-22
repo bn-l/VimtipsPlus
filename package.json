@@ -17,6 +17,7 @@
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
     "@swc/core": "^1.3.101",
+    "@types/chrome": "^0.0.266",
     "@types/core-js": "^2.5.8",
     "@types/markdown-it": "^14.0.0",
     "@types/node": "^20.12.5",
@@ -54,6 +55,7 @@
     "clean-components": "^1.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "vim-wasm": "^0.0.13"
   }
 }

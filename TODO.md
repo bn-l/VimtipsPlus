@@ -1,8 +1,6 @@
 
 - Github
 
-- Netlify preview (see note)
-
 - Extract terminal into a seperate component.
     - Rename necessary CSS and make CSS module
     - Add to clean components library
@@ -17,5 +15,5 @@
 
 - Update small logo, favicon
 
-
+- Change url (applicable only to web version) when tip changes
 

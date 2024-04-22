@@ -12,9 +12,13 @@ const cancelEvent = (e: Event) => {
 export interface VimTerminalProps {
     theme: "light" | "dark";
     font: string;
+    /**
+     * A function to run after the vim terminal is loaded.
+     */
+    loadCallback: () => void;
 }
 
-export default function VimTerminal({theme, font}: VimTerminalProps) {
+export default function VimTerminal({theme, font, loadCallback}: VimTerminalProps) {
 
     const [termLoaded, setTermLoaded] = useState(false);
     const vimRef = useRef<VimWasm | null>(null);
@@ -109,6 +113,8 @@ export default function VimTerminal({theme, font}: VimTerminalProps) {
             };
 
             vimRef.current.focus();
+            
+            loadCallback();
         }   
     }, [termLoaded]);
 
