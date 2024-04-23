@@ -67,8 +67,17 @@ export default function App() {
     const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
     const [theme, setTheme] = useState<"light" | "dark">("light");
 
+    const loadedAt = Date.now();
+
     useEffect(() => {
         void an.pageView(document.title, document.location.href);
+
+        const handleBeforeUnload = () => {
+            void an.event("quit", { duration: Date.now() - loadedAt });
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+        return () => window.removeEventListener("beforeunload", handleBeforeUnload);
     }, []);
     
     useEffect(() => {
@@ -136,24 +145,31 @@ export default function App() {
                         tipHtml={tipHtml}
                     />
                 </div>
-                <VimTerminal font={font} theme={theme} loadCallback={() => an.event("vim_loaded")} />
+                <VimTerminal font={font} theme={theme} onLoad={() => an.event("vim_loaded")} />
             </div>
 
             <div className="flex place-self-end flex-row gap-3 text-xs text-slate-500 dark:text-zinc-400 p-5 sm:text-sm">
 
                 <div className="">
-                    <Popup hotkey="?" displayElement="?" startOpen={firstLoad} />
+                    <Popup 
+                        hotkey="?" 
+                        displayElement="?" 
+                        startOpen={firstLoad} 
+                        onOpen={() => an.event("help_popup")}
+                    />
                 </div>
 
                 <div className="">Tip ID#: {tipId}</div>
                 <div>
                     <a href={getEditLink(idLineNumber)} 
                         className="text-stone-500 dark:text-zinc-400 no-underline"
+                        onClick={() => an.event("edit_tip")}
                     >edit</a>
                 </div>
                 <div>
                     <a href={VIMTIPS_LINK} 
                         className="text-stone-500 dark:text-zinc-400 no-underline"
+                        onClick={() => an.event("repo_link")}
                     >Vimtips Plus</a>
                 </div> 
                 <div>by bn-l</div>

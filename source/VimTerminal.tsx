@@ -15,10 +15,10 @@ export interface VimTerminalProps {
     /**
      * A function to run after the vim terminal is loaded.
      */
-    loadCallback: () => void;
+    onLoad: () => void;
 }
 
-export default function VimTerminal({theme, font, loadCallback}: VimTerminalProps) {
+export default function VimTerminal({theme, font, onLoad}: VimTerminalProps) {
 
     const [termLoaded, setTermLoaded] = useState(false);
     const vimRef = useRef<VimWasm | null>(null);
@@ -114,7 +114,7 @@ export default function VimTerminal({theme, font, loadCallback}: VimTerminalProp
 
             vimRef.current.focus();
             
-            loadCallback();
+            onLoad();
         }   
     }, [termLoaded]);
 

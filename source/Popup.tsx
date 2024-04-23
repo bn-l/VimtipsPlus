@@ -85,22 +85,27 @@ export interface PopupOptions {
     displayElement: JSX.Element | string;
     hotkey: string;
     startOpen?: boolean;
+    onOpen?: () => void;
 }
 
 export default function Popup(
-    { hotkey, displayElement, startOpen }: PopupOptions
+    { hotkey, displayElement, startOpen, onOpen }: PopupOptions
 ) {    
 
     const [popupVisible, setPopupVisible] = useState(!!startOpen);
 
     useEffect(() => {
+        if (popupVisible && onOpen) onOpen();
+    }, [popupVisible, onOpen]);
+
+    useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.key === hotkey) setPopupVisible(!popupVisible);
+            if (event.key === hotkey) setPopupVisible(popupVisible => !popupVisible);
         };
         document.addEventListener("keypress", handleKeyDown);
 
         return () => document.removeEventListener("keypress", handleKeyDown);
-    }, [popupVisible]);
+    }, []);
 
 
     return (

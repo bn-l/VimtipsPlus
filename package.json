@@ -23,6 +23,7 @@
     "@types/node": "^20.12.5",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/ua-parser-js": "^0.7.39",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
     "@vitejs/plugin-react": "^4.2.1",
@@ -50,11 +51,10 @@
     "wrap-ansi": "^9.0.0"
   },
   "dependencies": {
-    "@mui/base": "^5.0.0-beta.40",
-    "@mui/material": "^5.15.15",
     "clean-components": "^1.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "ua-parser-js": "^1.0.37",
     "vim-wasm": "^0.0.13"
   }
 }
