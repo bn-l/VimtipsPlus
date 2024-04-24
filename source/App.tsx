@@ -1,10 +1,10 @@
 // import "./css/App.css";
 import TipBody from "./TipBody.tsx";
 import tips from "./data/tips-generated.json";
-import VimTerminal from "./VimTerminal.tsx";
+import VimTerminal from "./VimTerminal/VimTerminal.tsx";
 import logo from "./images/logo.svg";
 
-import { Switch } from "@mui/base/Switch";
+
 import { useState, useEffect } from "react";
 import { DarkModeSwitch } from "clean-components";
 import an from "../vendor/google-analytics.ts";
