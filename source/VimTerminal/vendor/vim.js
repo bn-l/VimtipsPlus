@@ -1871,12 +1871,12 @@ function createWasm() {
     }
     function instantiateAsync() {
         if (!wasmBinary && typeof WebAssembly.instantiateStreaming === "function" && !isDataURI(wasmBinaryFile) && typeof fetch === "function") {
-            fetch(wasmBinaryFile, { credentials: "same-origin" }).then(function (response) {
+            void fetch(wasmBinaryFile, { credentials: "same-origin" }).then(function (response) {
                 var result = WebAssembly.instantiateStreaming(response, info);
                 return result.then(receiveInstantiatedSource, function (reason) {
                     err("wasm streaming compile failed: " + reason);
                     err("falling back to ArrayBuffer instantiation");
-                    instantiateArrayBuffer(receiveInstantiatedSource);
+                    void instantiateArrayBuffer(receiveInstantiatedSource);
                 });
             });
         } else {
@@ -1892,7 +1892,7 @@ function createWasm() {
             return false;
         }
     }
-    instantiateAsync();
+    void instantiateAsync();
     return {};
 }
 var tempDouble;

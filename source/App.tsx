@@ -1,7 +1,6 @@
 // import "./css/App.css";
 import TipBody from "./TipBody.tsx";
 import tips from "./data/tips-generated.json";
-import VimTerminal from "./VimTerminal/VimTerminal.tsx";
 import logo from "./images/logo.svg";
 
 
@@ -13,7 +12,7 @@ import Popup from "./Popup.tsx";
 
 import colorTheme from "./colorTheme.json";
 
-
+import VimTerminal from "./VimTerminal/index.tsx";
 
 // wrap in try catch and set tip div to error message if one occurs
 
@@ -149,11 +148,20 @@ export default function App() {
                         tipHtml={tipHtml}
                     />
                 </div>
+                {!termLoaded &&
+                    <div>
+                        <button 
+                            className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
+                            onClick={() => setTermLoaded(true)}
+                        >
+                            load terminal (s)
+                        </button>
+                    </div>
+                }
                 <VimTerminal 
                     font={font} 
                     theme={theme} 
-                    onLoad={() => an.event("vim_loaded")} 
-                    loadedStateManager={[termLoaded, setTermLoaded]}
+                    loaded={termLoaded}
                 />
             </div>
 
