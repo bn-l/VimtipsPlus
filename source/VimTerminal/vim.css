@@ -5,6 +5,15 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 
@@ -45,14 +54,6 @@ body {
 :root.dark #vim-canvas {
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.583));
 }
-
-
-/* @media screen and (max-width: 1024px) {
-    #vim-canvas {
-        width: calc(1.429 * 55vw);
-        height: calc(1.429 * 40vh);
-    }
-} */
 
 #vim-input {
     width: 1px;

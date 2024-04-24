@@ -6,13 +6,17 @@ import { ViteStaticCopyOptions, viteStaticCopy } from "vite-plugin-static-copy";
 const VSCOptions: ViteStaticCopyOptions = {
     targets: [
         {
-          src: "node_modules/vim-wasm/vim.wasm",
+          src: "source/VimTerminal/vim.wasm",
           dest: "assets",
         },
         {
-          src: "node_modules/vim-wasm/vim.data",
+          src: "source/VimTerminal/vim.data",
           dest: "assets"
         },
+        {
+            src: "source/VimTerminal/vim.css",
+            dest: "assets"
+        },    
         {
             src: "netlify.toml",
             dest: ""

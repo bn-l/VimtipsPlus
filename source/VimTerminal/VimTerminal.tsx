@@ -1,6 +1,6 @@
  
 import { VimWasm, VimWorker } from "./vimwasm.js";
-import vimWorkerPath from "./vim.js?url";
+// import vimWorkerPath from "./vim.js?url";
 import { useRef, useEffect, useState } from "react";
 import terminalSrc from "./terminal.html?url";
 
@@ -29,132 +29,131 @@ export default function VimTerminal({theme, font, onLoad, loadedStateManager}: V
     const divRef = useRef<HTMLDivElement | null>(null);
     const iframeRef = useRef<HTMLIFrameElement>(null);
     
-    useEffect(() => {
-        if(!vimRef.current?.isRunning()) return;
+    // useEffect(() => {
+    //     if(!vimRef.current?.isRunning()) return;
 
-        const cmdLight = `colorscheme PaperColor | set background=light | redraw`;
-        const cmdDark = `colorscheme onedark | set background=dark | redraw`;
+    //     const cmdLight = `colorscheme PaperColor | set background=light | redraw`;
+    //     const cmdDark = `colorscheme onedark | set background=dark | redraw`;
 
-        console.log(theme === "light" ? cmdLight : cmdDark);
+    //     console.log(theme === "light" ? cmdLight : cmdDark);
 
-        void vimRef.current.cmdline(theme === "light" ? cmdLight : cmdDark);
-        // vimRef.current.sendKeydown("", 18);
-    }, [theme]);
+    //     void vimRef.current.cmdline(theme === "light" ? cmdLight : cmdDark);
+    //     // vimRef.current.sendKeydown("", 18);
+    // }, [theme]);
 
-    // Term loaded
-    useEffect(() => {
-
-
-        const iframeDocument = iframeRef?.current?.contentDocument || iframeRef?.current?.contentWindow?.document;
-        if(!iframeDocument) return;
-
-        canvasRef.current = iframeDocument.getElementById("vim-canvas") as HTMLCanvasElement;
-        inputRef.current = iframeDocument.getElementById("vim-input") as HTMLInputElement;
-        divRef.current = iframeDocument.getElementById("vim-terminal") as HTMLDivElement;
+    // // Term loaded
+    // useEffect(() => {
 
 
-        if (termLoaded && !vimRef.current) { 
-            // Create vim instance
-            vimRef.current = new VimWasm({
-                canvas: canvasRef.current!,
-                input: inputRef.current!,
-                workerScriptPath: vimWorkerPath,
-            });
+    //     const iframeDocument = iframeRef?.current?.contentDocument || iframeRef?.current?.contentWindow?.document;
+    //     if(!iframeDocument) return;
 
-            divRef.current!.addEventListener(
-                'dragover',
-                e => {
-                    cancelEvent(e);
-                    if (e.dataTransfer) {
-                        e.dataTransfer.dropEffect = 'copy';
-                    }
-                },
-                false,
-            );
+    //     canvasRef.current = iframeDocument.getElementById("vim-canvas") as HTMLCanvasElement;
+    //     inputRef.current = iframeDocument.getElementById("vim-input") as HTMLInputElement;
+    //     divRef.current = iframeDocument.getElementById("vim-terminal") as HTMLDivElement;
+
+    //     if (termLoaded && !vimRef.current) { 
+    //         // Create vim instance
+    //         vimRef.current = new VimWasm({
+    //             canvas: canvasRef.current!,
+    //             input: inputRef.current!,
+    //             workerScriptPath: vimWorkerPath,
+    //         });
+
+    //         divRef.current!.addEventListener(
+    //             'dragover',
+    //             e => {
+    //                 cancelEvent(e);
+    //                 if (e.dataTransfer) {
+    //                     e.dataTransfer.dropEffect = 'copy';
+    //                 }
+    //             },
+    //             false,
+    //         );
            
-            divRef.current!.addEventListener(
-                "drop",
-                e => {
-                    cancelEvent(e);
-                    if (e.dataTransfer) {
-                        vimRef.current!.dropFiles(e.dataTransfer.files).catch(console.error);
-                    }
-                },
-                false,
-            );
+    //         divRef.current!.addEventListener(
+    //             "drop",
+    //             e => {
+    //                 cancelEvent(e);
+    //                 if (e.dataTransfer) {
+    //                     vimRef.current!.dropFiles(e.dataTransfer.files).catch(console.error);
+    //                 }
+    //             },
+    //             false,
+    //         );
 
-            vimRef.current.onFileExport = (fullpath, contents) => {
-                const slashIdx = fullpath.lastIndexOf('/');
-                const filename = slashIdx !== -1 ? fullpath.slice(slashIdx + 1) : fullpath;
-                const blob = new Blob([contents], { type: 'application/octet-stream' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.rel = 'noopener';
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            };
+    //         vimRef.current.onFileExport = (fullpath, contents) => {
+    //             const slashIdx = fullpath.lastIndexOf('/');
+    //             const filename = slashIdx !== -1 ? fullpath.slice(slashIdx + 1) : fullpath;
+    //             const blob = new Blob([contents], { type: 'application/octet-stream' });
+    //             const url = URL.createObjectURL(blob);
+    //             const a = document.createElement('a');
+    //             a.style.display = 'none';
+    //             a.href = url;
+    //             a.rel = 'noopener';
+    //             a.download = filename;
+    //             document.body.appendChild(a);
+    //             a.click();
+    //             document.body.removeChild(a);
+    //             URL.revokeObjectURL(url);
+    //         };
 
-            vimRef.current.onError = console.error;
+    //         vimRef.current.onError = console.error;
 
-            vimRef.current.start({
-                cmdArgs: [
-                    "/persist/white.txt",
-                    "-c", theme === "light" ? "set background=light" : "set background=dark",
-                    "-c", `colorscheme ${theme === "light" ? "PaperColor" : "onedark"}`,
-                    "-c", `set number | set guifont=${font} | set tabstop=4 | set shiftwidth=4 | set expandtab | set autoindent | syntax on | set wildmenu | set wildmode=longest:full,full`,
-                ],
-                debug: false,
-                dirs: ["/persist"],
-                persistentDirs: ["/persist"],
-                // files: {
-                //     "/persist/hello.js": startingFile,
-                // },
-                fetchFiles: {
-                    "/persist/white.txt": "/white.txt",
-                    "/usr/local/share/vim/colors/PaperColor.vim": "/PaperColor.vim",
-                },
+    //         vimRef.current.start({
+    //             cmdArgs: [
+    //                 "/persist/white.txt",
+    //                 "-c", theme === "light" ? "set background=light" : "set background=dark",
+    //                 "-c", `colorscheme ${theme === "light" ? "PaperColor" : "onedark"}`,
+    //                 "-c", `set number | set guifont=${font} | set tabstop=4 | set shiftwidth=4 | set expandtab | set autoindent | syntax on | set wildmenu | set wildmode=longest:full,full`,
+    //             ],
+    //             debug: false,
+    //             dirs: ["/persist"],
+    //             persistentDirs: ["/persist"],
+    //             // files: {
+    //             //     "/persist/hello.js": startingFile,
+    //             // },
+    //             fetchFiles: {
+    //                 "/persist/white.txt": "/white.txt",
+    //                 "/usr/local/share/vim/colors/PaperColor.vim": "/PaperColor.vim",
+    //             },
 
-            });
+    //         });
 
-            vimRef.current.onVimExit = () => {
-                vimRef.current = null;
-                setTermLoaded(false);
-            };
+    //         vimRef.current.onVimExit = () => {
+    //             vimRef.current = null;
+    //             setTermLoaded(false);
+    //         };
 
-            vimRef.current.focus();
+    //         vimRef.current.focus();
             
-            onLoad();
-        }   
-    }, [termLoaded]);
+    //         onLoad();
+    //     }   
+    // }, [termLoaded]);
 
-    useEffect(() => {
-        // To save the result of :w calls to indexdb, need to :q
-        //  this calls a quit before the tab is closed to sort of auto sync.
-        // Disabled as it causes an on quit call when refreshing
-        const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-            // if (vimRef.current?.isRunning()) {
-            //     void vimRef.current.cmdline("qall!");
-            // }
-        };
+    // useEffect(() => {
+    //     // To save the result of :w calls to indexdb, need to :q
+    //     //  this calls a quit before the tab is closed to sort of auto sync.
+    //     // Disabled as it causes an on quit call when refreshing
+    //     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+    //         // if (vimRef.current?.isRunning()) {
+    //         //     void vimRef.current.cmdline("qall!");
+    //         // }
+    //     };
 
-        const handleKeyPress = (event: KeyboardEvent) => {
-            if (event.key === "s") {
-                setTermLoaded(true);
-            }
-        };
-        window.addEventListener("keypress", handleKeyPress);
-        window.addEventListener("beforeunload", handleBeforeUnload);
+    //     const handleKeyPress = (event: KeyboardEvent) => {
+    //         if (event.key === "s") {
+    //             setTermLoaded(true);
+    //         }
+    //     };
+    //     window.addEventListener("keypress", handleKeyPress);
+    //     window.addEventListener("beforeunload", handleBeforeUnload);
     
-        return () => {
-            window.removeEventListener("keypress", handleKeyPress); 
-            window.removeEventListener("beforeunload", handleBeforeUnload);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("keypress", handleKeyPress); 
+    //         window.removeEventListener("beforeunload", handleBeforeUnload);
+    //     };
+    // }, []);
 
     // if (!termLoaded) {
     //     return (
