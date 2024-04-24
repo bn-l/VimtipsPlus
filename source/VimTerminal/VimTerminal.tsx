@@ -17,11 +17,12 @@ export interface VimTerminalProps {
      * A function to run after the vim terminal is loaded.
      */
     onLoad: () => void;
+    loadedStateManager?: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 }
 
-export default function VimTerminal({theme, font, onLoad}: VimTerminalProps) {
+export default function VimTerminal({theme, font, onLoad, loadedStateManager}: VimTerminalProps) {
 
-    const [termLoaded, setTermLoaded] = useState(false);
+    const [termLoaded, setTermLoaded] = loadedStateManager ?? useState(false);
     const vimRef = useRef<VimWasm | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const inputRef = useRef<HTMLInputElement | null>(null);
@@ -170,12 +171,15 @@ export default function VimTerminal({theme, font, onLoad}: VimTerminalProps) {
                 <button 
                     className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
                     onClick={() => setTermLoaded(true)}
-                >load terminal (ss)</button>
+                >load terminal (s)</button>
             }
             <iframe 
+                id="vim-iframe"
+                className="p-0 m-0 border-none"
                 src={terminalSrc} ref={iframeRef} 
                 style={{
                     // visibility: termLoaded ? "visible" : "hidden"
+                    display: termLoaded ? "block" : "none"
                 }} 
             />
         </>

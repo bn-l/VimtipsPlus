@@ -66,6 +66,7 @@ export default function App() {
 
     const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
     const [theme, setTheme] = useState<"light" | "dark">("light");
+    const [termLoaded, setTermLoaded] = useState(false);
 
     const loadedAt = Date.now();
 
@@ -103,6 +104,9 @@ export default function App() {
                     break;
                 case "t":
                     toggleTheme();
+                    break;
+                case "s":
+                    setTermLoaded(true);
                     break;
                 default:
                     break;
@@ -145,7 +149,12 @@ export default function App() {
                         tipHtml={tipHtml}
                     />
                 </div>
-                <VimTerminal font={font} theme={theme} onLoad={() => an.event("vim_loaded")} />
+                <VimTerminal 
+                    font={font} 
+                    theme={theme} 
+                    onLoad={() => an.event("vim_loaded")} 
+                    loadedStateManager={[termLoaded, setTermLoaded]}
+                />
             </div>
 
             <div className="flex place-self-end flex-row gap-3 text-xs text-slate-500 dark:text-zinc-400 p-5 sm:text-sm">
