@@ -7,5 +7,5 @@
 
 - Check CI setup
 
-- Readme once over
+- Add chrome extension page link to readme
 

@@ -7,13 +7,24 @@
 <div align="center">
 
 Vim tips with a built-in wasm implemention of vim. <br />
-Learn vim with daily small tips that you can practice in the browser right.
+Learn vim with daily small tips that you can practice right in the browser.
+
+<a href="https://vimtipsplus.netlify.app/">https://vimtipsplus.netlify.app</a>
+
+
+<!-- Must have extension available to use badge -->
+<!-- <a href=""><img src="./media/extension-badge.svg" alt="Download extension for chrome" width="200px" /></a> -->
 
 </div>
 
 
-![Vim Tips Chrome Extension](./media/screencast.webp)
+<div align="center">
 
+<img src="./media/screencast.webp" alt="VimTips Plus - screencast" />
+
+</div>
+
+<br />
 
 ## Usage:
  - Click outside the terminal to defocus it. When the terminal has focus it will capture all key strokes
@@ -21,6 +32,7 @@ Learn vim with daily small tips that you can practice in the browser right.
 - Drag and drop a file on the terminal to edit it
 - `:e tutor` to run the vim tutor
 
+<br />
 
 ## Shortcuts:
 (when terminal is unfocussed)
