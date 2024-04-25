@@ -12,7 +12,7 @@
     "test": "echo no tests yet",
     "lint:style": "npx eslint --fix",
     "bump-manifest": "tsx ./scripts/bump-manifest.mts",
-    "prebump": "npm run bump-manifest && git acu 'chore: update manifest'",
+    "prebump": "npm run bump-manifest && git acu \"chore: update manifest\"",
     "bump": "npx bumpp",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
     "dev": "vite --force",
