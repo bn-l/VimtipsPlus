@@ -1,7 +1,7 @@
 {
   "name": "vimtips-plus",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "build-tips": "tsx ./scripts/process-tips.mts",
