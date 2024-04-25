@@ -3,17 +3,21 @@ import UnoCSS from "unocss/vite";
 import react from "@vitejs/plugin-react-swc";
 import { ViteStaticCopyOptions, viteStaticCopy } from "vite-plugin-static-copy";
 import { resolve } from "node:path";
+import { whyframe } from '@whyframe/core'
+import { whyframeJsx } from '@whyframe/jsx'
+
+import { fileURLToPath } from 'url';
 
 const VSCOptions: ViteStaticCopyOptions = {
     targets: [
-        // {
-        //   src: "source/VimTerminal/vim.wasm",
-        //   dest: "assets",
-        // },
-        // {
-        //   src: "source/VimTerminal/vim.data",
-        //   dest: "assets"
-        // },
+        {
+          src: "VimTerminal/vendor/vim.wasm",
+          dest: "assets",
+        },
+        {
+          src: "VimTerminal/vendor/vim.data",
+          dest: "assets"
+        },
         // {
         //     src: "source/VimTerminal/vim.css",
         //     dest: "assets"
@@ -28,11 +32,11 @@ const VSCOptions: ViteStaticCopyOptions = {
 export default defineConfig({
     build: {
         rollupOptions: {
-            input: {
-              main: resolve(__dirname, 'index.html'),
-              nested: resolve(__dirname, 'source/VimTerminal/terminal.html'),
-            },
-        }
+          input: {
+            main: fileURLToPath(new URL('./index.html', import.meta.url)),
+            vimTerminal: fileURLToPath(new URL('./VimTerminal/index.html', import.meta.url)),
+          },
+        },
     },
     plugins: [
         UnoCSS(),

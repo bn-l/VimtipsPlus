@@ -38,7 +38,7 @@ const ShortcutTable = () => (
         <h3 className="p-0 m-0">
             Shortcuts
         </h3>
-        <div className="text-sm py-1">(when terminal is unfocussed)</div>
+        <div className="text-sm py-1">(when terminal is not focussed)</div>
         <table id="shortcuts-table" className="pt-2 pl-2 m-0">
             {/* <thead>
                 <tr>

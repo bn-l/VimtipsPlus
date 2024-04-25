@@ -1,6 +1,7 @@
 
-import terminalSrc from "./terminal.html?url";
+// import terminalSrc from "./index.html?url";
 import { useRef, useState, useEffect } from "react";
+import "./index.css";
 
 // vimMain mounts VimWasm.tsx in terminal.html
 //   (can add back the divs to Terminal's render method)
@@ -60,7 +61,7 @@ export default function VimTerminal({
         <iframe 
             id="vim-iframe"
             className="p-0 m-0 border-none"
-            src={terminalSrc} ref={iframeRef} 
+            src="/VimTerminal/index.html" ref={iframeRef} 
             style={{
                 display: loaded ? "block" : "none"
             }} 

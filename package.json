@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build-tips": "tsx ./scripts/process-tips.mts",
+    
     "build-app": "tsc && vite build",
     "preview": "vite preview",
     "start:dev": "ts-node",
@@ -12,7 +13,7 @@
     "lint:style": "npx eslint --fix",
     "pub": "npx bumpp",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
-    "dev": "vite"
+    "dev": "vite --force"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
@@ -28,6 +29,8 @@
     "@typescript-eslint/parser": "^7.5.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "@whyframe/core": "^0.1.11",
+    "@whyframe/jsx": "^0.1.10",
     "bumpp": "^9.4.0",
     "cheerio": "^1.0.0-rc.12",
     "eslint": "^8.57.0",

@@ -46,21 +46,4 @@ code {
 }
 
 
-#vim-iframe {
-    /* background-color: red; */
-
-    width: calc((1.429 * 40vw));
-    height: calc((1.429 * 40vh));
-
-    /* filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.283));
-    transition: filter 200ms cubic-bezier(0.4, 0, 0.2, 1); */
-}
-
-
-@media screen and (max-width: 1024px) {
-    #vim-iframe {
-        width: calc(1.429 * 55vw);
-        height: calc(1.429 * 40vh);
-    }
-}
 

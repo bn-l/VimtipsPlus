@@ -8,3 +8,5 @@ addEventListener("unhandledrejection", async(event) => {
 chrome.runtime.onInstalled.addListener(() => {
     void an.event("install");
 });
+
+console.log("Hello from service worker!");
