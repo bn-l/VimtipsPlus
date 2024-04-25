@@ -6,3 +6,9 @@
     - Very simple--just text and similar md sheet
 
 - Add extension required
+
+- Correctly getting the right dark mode preference at the start and not re-rendering.
+
+- Re-record video with new logo
+
+- Use .vimrc in public instead of commands (except for runtime theme commands)

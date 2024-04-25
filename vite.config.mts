@@ -3,31 +3,8 @@ import UnoCSS from "unocss/vite";
 import react from "@vitejs/plugin-react-swc";
 import { ViteStaticCopyOptions, viteStaticCopy } from "vite-plugin-static-copy";
 import { resolve } from "node:path";
-import { whyframe } from '@whyframe/core'
-import { whyframeJsx } from '@whyframe/jsx'
 
 import { fileURLToPath } from 'url';
-
-const VSCOptions: ViteStaticCopyOptions = {
-    targets: [
-        {
-          src: "VimTerminal/vendor/vim.wasm",
-          dest: "assets",
-        },
-        {
-          src: "VimTerminal/vendor/vim.data",
-          dest: "assets"
-        },
-        // {
-        //     src: "source/VimTerminal/vim.css",
-        //     dest: "assets"
-        // },    
-        {
-            src: "netlify.toml",
-            dest: ""
-        }
-    ]
-}
 
 export default defineConfig({
     build: {
@@ -41,7 +18,7 @@ export default defineConfig({
     plugins: [
         UnoCSS(),
         react(),
-        viteStaticCopy(VSCOptions)
+        // viteStaticCopy(VSCOptions),
     ],
     server: {
         headers: {

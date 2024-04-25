@@ -1,5 +1,10 @@
 import { VimWasm } from "./vendor/vimwasm.js";
-import vimWorkerPath from "./vendor/vim.js?url";
+// import vimWorkerPath from "./vendor/vim.js?url";
+
+// import { VimWasm } from "vim-wasm";
+// import vimWorkerPath from "vim-wasm/vim.js?url";
+
+
 import { useRef, useEffect, useState } from "react";
 
 const cancelEvent = (e: Event) => {
@@ -61,7 +66,7 @@ export default function VimWasmComponent() {
         vimRef.current = new VimWasm({
             canvas: canvasRef.current!,
             input: inputRef.current!,
-            workerScriptPath: vimWorkerPath,
+            workerScriptPath: "/vim.js",
         });
 
         divRef.current!.addEventListener(
@@ -130,7 +135,7 @@ export default function VimWasmComponent() {
 
         vimRef.current.focus();
 
-    }, [vimWorkerPath, font, theme, loaded, vimRef, canvasRef, inputRef, divRef]);
+    }, [font, theme, loaded, vimRef, canvasRef, inputRef, divRef]);
 
     useEffect(() => {
         // To save the result of :w calls to indexdb, need to :q
