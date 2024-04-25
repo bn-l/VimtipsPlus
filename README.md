@@ -12,7 +12,7 @@ Learn vim with daily small tips that you can practice in the browser right.
 </div>
 
 
-![Vim Tips Chrome Extension](./media/screencast.apng)
+![Vim Tips Chrome Extension](./media/screencast.webp)
 
 
 ## Usage:

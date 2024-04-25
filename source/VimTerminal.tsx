@@ -1,5 +1,6 @@
 import { VimWasm } from "vim-wasm";
 import "./css/VimTerminal.css";
+import vimrc from "./vimrc.mjs";
 
 import { useRef, useEffect } from "react";
 
@@ -7,6 +8,7 @@ const cancelEvent = (e: Event) => {
     e.preventDefault();
     e.stopPropagation();
 }
+
 
 export interface VimTerminalProps {
     theme?: "light" | "dark";
@@ -20,6 +22,10 @@ export interface VimTerminalProps {
      * Whether the vim terminal is loaded
      */
     loaded: boolean;
+    /**
+     * Allows it to close itself on :q
+     */
+    setLoaded?: (loaded: boolean) => void;
 }
 
 /**
@@ -28,8 +34,9 @@ export interface VimTerminalProps {
 export default function VimWasmComponent({
     theme = "light",
     font = "Courier\\ new:h16",
-    loaded = false
-}) {
+    loaded = false,
+    setLoaded = () => {},
+}: VimTerminalProps) {
 
     const vimRef = useRef<VimWasm | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -105,23 +112,26 @@ export default function VimWasmComponent({
                 "/persist/white.txt",
                 "-c", theme === "light" ? "set background=light" : "set background=dark",
                 "-c", `colorscheme ${theme === "light" ? "PaperColor" : "onedark"}`,
-                "-c", `set number | set guifont=${font} | set tabstop=4 | set shiftwidth=4 | set expandtab | set autoindent | syntax on | set wildmenu | set wildmode=longest:full,full`,
+                "-c", `set guifont=${font}`,
+                // Rest set in vimrc
             ],
             debug: false,
             dirs: ["/persist"],
             persistentDirs: ["/persist"],
-            // files: {
-            //     "/persist/hello.js": startingFile,
-            // },
+            files: {
+                "/home/web_user/.vim/vimrc": vimrc,
+            },
             fetchFiles: {
                 "/persist/white.txt": "/white.txt",
                 "/usr/local/share/vim/colors/PaperColor.vim": "/PaperColor.vim",
+                // "/.vim/vimrc": "/vimrc",
             },
 
         });
 
         vimRef.current.onVimExit = () => {
             vimRef.current = null;
+            setLoaded(false);
         };
 
         vimRef.current.focus();
@@ -143,11 +153,6 @@ export default function VimWasmComponent({
             window.removeEventListener("beforeunload", handleBeforeUnload);
         };
     }, []);
-
-    // <button 
-    // className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
-    // onClick={() => setTermLoaded(true)}
-    // >load terminal (s)</button>
 
     return (
         <div id="vim-terminal"  ref={divRef}>

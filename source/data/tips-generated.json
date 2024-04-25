@@ -76,7 +76,7 @@
     },
     {
         "tipId": "1f229a",
-        "tipHtml": "<p>CTRL-c In Normal mode, any pending command is aborted. Also aborts current\nsearch.</p>\n",
+        "tipHtml": "<p><code>CTRL-c</code> In Normal mode, any pending command is aborted. Also aborts current\nsearch.</p>\n",
         "idLineNumber": 134
     },
     {
@@ -181,22 +181,22 @@
     },
     {
         "tipId": "d0afaa",
-        "tipHtml": "<p>f is for finding things so it doesn’t do anything on it’s own. It will jump to\nthe next character you type after f. It can be combined with c,d,y to change,\ncut, and copy sections of text.</p>\n",
+        "tipHtml": "<p><code>f</code> is for finding things so it doesn’t do anything on it’s own. It will jump to\nthe next character you type after <code>f</code>. It can be combined with <code>c</code>,<code>d</code>,<code>y</code> to change,\ncut, and copy sections of text.</p>\n",
         "idLineNumber": 307
     },
     {
         "tipId": "5cf64e",
-        "tipHtml": "<p><code>fr</code> jumps to the next r on the (same line only).</p>\n",
+        "tipHtml": "<p><code>fr</code> jumps to the next &quot;r&quot; on the (same line only).</p>\n",
         "idLineNumber": 317
     },
     {
         "tipId": "0533d0",
-        "tipHtml": "<p><code>ft</code> jumps to the next t on the (same line only).</p>\n",
+        "tipHtml": "<p><code>ft</code> jumps to the next &quot;t&quot; on the (same line only).</p>\n",
         "idLineNumber": 325
     },
     {
         "tipId": "5218bc",
-        "tipHtml": "<p><code>f,</code> jumps to the next , on the (same line only).</p>\n",
+        "tipHtml": "<p><code>f,</code> jumps to the next &quot;,&quot; on the (same line only).</p>\n",
         "idLineNumber": 333
     },
     {
@@ -836,7 +836,7 @@
     },
     {
         "tipId": "f4daad",
-        "tipHtml": "<p>y stands for copy, I mean yank. It doesn’t do anything by itself. It is very\nsimilar to c and d in how it can be used.</p>\n",
+        "tipHtml": "<p><code>y</code> stands for copy, I mean yank. It doesn’t do anything by itself. It is very\nsimilar to <code>c</code> and <code>d</code> in how it can be used.</p>\n",
         "idLineNumber": 1396
     },
     {
