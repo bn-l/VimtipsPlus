@@ -12,7 +12,7 @@ import Popup from "./Popup.tsx";
 
 import colorTheme from "./colorTheme.json";
 
-import VimTerminal from "../VimTerminal/index.tsx";
+import VimTerminal from "./VimTerminal.tsx";
 
 // wrap in try catch and set tip div to error message if one occurs
 

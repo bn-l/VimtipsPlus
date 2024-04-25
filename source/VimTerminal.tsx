@@ -1,5 +1,5 @@
 import { VimWasm } from "vim-wasm";
-import "./VimTerminal.css";
+import "./css/VimTerminal.css";
 
 import { useRef, useEffect } from "react";
 
