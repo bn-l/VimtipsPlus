@@ -1,9 +1,12 @@
+
 <div align="center">
 
 <img src="./media/logo.svg" alt="VimTips Plus - Small vim tips with a vim terminal built in"  height="200px" />
 
 </div>
+
 <br />
+
 <div align="center">
 
 A chrome new tab extension / daily site with a built-in wasm implemention of vim. <br />
@@ -20,7 +23,7 @@ Learn vim with daily small tips that you can practice right in the browser.
 
 <div align="center">
 
-<img src="./media/screencast.webp" alt="VimTips Plus - screencast" />
+<a href="https://vimtipsplus.netlify.app/"><img src="./media/screencast.webp" alt="VimTips Plus - screencast" /></a>
 
 </div>
 
