@@ -11,11 +11,13 @@
     "start:dev": "ts-node",
     "test": "echo no tests yet",
     "lint:style": "npx eslint --fix",
-    "prebump": "tsx ./scripts/bump-manifest.mts",
+    "bump-manifest": "tsx ./scripts/bump-manifest.mts",
+    "prebump": "npm run bump-manifest && git acu 'chore: update manifest'",
     "bump": "npx bumpp",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
     "dev": "vite --force",
-    "build-app": "tsc && vite build"
+    "build-app": "tsc && vite build",
+    "build": "echo 'this buggy action needs a build command present'" 
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
