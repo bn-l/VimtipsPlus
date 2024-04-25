@@ -10,5 +10,5 @@ patch = Number(patch) + 1;
 
 manifest.version = `${ major }.${ minor }.${ patch }`;
 
-const newJson = JSON.stringify(manifest, null, 2);
+const newJson = JSON.stringify(manifest, null, 4);
 await fsp.writeFile(manifestPath, newJson);
