@@ -1,7 +1,7 @@
 {
   "name": "vimtips-plus",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "build-tips": "tsx ./scripts/process-tips.mts",
@@ -11,7 +11,8 @@
     "start:dev": "ts-node",
     "test": "echo no tests yet",
     "lint:style": "npx eslint --fix",
-    "pub": "npx bumpp",
+    "prebump": "tsx ./scripts/bump-manifest.mts",
+    "bump": "npx bumpp",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
     "dev": "vite --force",
     "build-app": "tsc && vite build"
