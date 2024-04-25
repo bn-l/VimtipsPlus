@@ -1,4 +1,4 @@
-import VimWasmComponent from "./VimWasmComponent.tsx";
+import VimWasmComponent from "./VimTerminal.tsx";
 
 import React from "react";
 import ReactDOM from "react-dom/client";

@@ -12,3 +12,6 @@
 - Re-record video with new logo
 
 - Use .vimrc in public instead of commands (except for runtime theme commands)
+
+
+
