@@ -1,6 +1,6 @@
 {
     "name": "Vimtips Plus",
-    "description": "Vim tips with a built-in wasm implemention of vim. Learn vim with daily small tips that you can practice right in the browser.",
+    "description": "Learn vim with daily small tips that you can practice right in the browser with this new tab extension. Features a built in-vim terminal implemented in wasm.",
     "version": "1.0.4",
     "manifest_version": 3,
     "incognito": "split",

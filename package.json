@@ -3,10 +3,13 @@
   "private": true,
   "version": "1.0.4",
   "type": "module",
+  "description": "Learn vim with daily small tips that you can practice right in the browser. Features a built-in vim terminal implemented in wasm.",
   "scripts": {
+    "build": "echo 'this buggy action needs a build command present'",
     "build-tips": "tsx ./scripts/process-tips.mts",
     "build-sw": "vite build --config vite.sw.config.mts",
     "prebuild-app": "npm run build-tips && npm run build-sw",
+    "postbuild-app": "tsx ./scripts/zip-dist.mts",
     "preview": "vite preview",
     "start:dev": "ts-node",
     "test": "echo no tests yet",
@@ -16,8 +19,7 @@
     "bump": "npx bumpp",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
     "dev": "vite --force",
-    "build-app": "tsc && vite build",
-    "build": "echo 'this buggy action needs a build command present'"
+    "build-app": "tsc && vite build"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
@@ -47,6 +49,7 @@
     "highlight.js": "^11.9.0",
     "indent-string": "^5.0.0",
     "markdown-it": "^14.1.0",
+    "pathe": "^1.1.2",
     "rimraf": "^5.0.5",
     "terser": "^5.30.4",
     "ts-node": "^10.9.2",
@@ -60,6 +63,7 @@
   },
   "dependencies": {
     "clean-components": "^1.0.20",
+    "jszip": "^3.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ua-parser-js": "^1.0.37",

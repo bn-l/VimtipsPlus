@@ -6,6 +6,7 @@ import Popup from "./Popup.tsx";
 import colorTheme from "./colorTheme.json";
 import VimTerminal from "./VimTerminal.tsx";
 import an from "../vendor/google-analytics.ts";
+import extensionBadge from "../media/extension-badge.svg";
 
 import { useState, useEffect } from "react";
 import { DarkModeSwitch, getStartingTheme } from "clean-components";
@@ -115,7 +116,14 @@ export default function App() {
                     />
                 </div>
 
-                <div className="pt-8 pr-8 drop-shadow-sm">
+                <div className="pt-8 pr-8 drop-shadow-sm w-70vw flex flex-row justify-end align-middle gap-2ch">
+                    {chrome?.runtime ? null : 
+                        <img 
+                            className="w-15ch"
+                            src={extensionBadge}
+                            alt="Download the Vimtips Plus chrome new tab page"
+                        /> 
+                    }
                     <DarkModeSwitch 
                         lightColor={colorTheme.colors.light} 
                         darkColor={colorTheme.colors.dark}
