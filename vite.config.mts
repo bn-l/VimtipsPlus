@@ -1,31 +1,14 @@
 import { defineConfig } from "vite";
 import UnoCSS from "unocss/vite";
 import react from "@vitejs/plugin-react-swc";
-import { ViteStaticCopyOptions, viteStaticCopy } from "vite-plugin-static-copy";
+import { resolve } from "node:path";
 
-const VSCOptions: ViteStaticCopyOptions = {
-    targets: [
-        {
-          src: "node_modules/vim-wasm/vim.wasm",
-          dest: "assets",
-        },
-        {
-          src: "node_modules/vim-wasm/vim.data",
-          dest: "assets"
-        },
-        {
-            src: "netlify.toml",
-            dest: ""
-        }
-    ]
-}
+import { fileURLToPath } from 'url';
 
 export default defineConfig({
-    
     plugins: [
         UnoCSS(),
         react(),
-        viteStaticCopy(VSCOptions)
     ],
     server: {
         headers: {

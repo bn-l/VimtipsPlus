@@ -1,32 +1,15 @@
-// import "./css/App.css";
+
 import TipBody from "./TipBody.tsx";
 import tips from "./data/tips-generated.json";
-import VimTerminal from "./VimTerminal.tsx";
 import logo from "./images/logo.svg";
-
-import { useState, useEffect } from "react";
-import { DarkModeSwitch } from "clean-components";
+import Popup from "./Popup.tsx";
+import colorTheme from "./colorTheme.json";
+import VimTerminal from "./VimTerminal.tsx";
 import an from "../vendor/google-analytics.ts";
 
-import Popup from "./Popup.tsx";
+import { useState, useEffect } from "react";
+import { DarkModeSwitch, getStartingTheme } from "clean-components";
 
-import colorTheme from "./colorTheme.json";
-
-
-
-// wrap in try catch and set tip div to error message if one occurs
-
-// :set clipboard=unnamed  will synchronise clipboards between vim and system (maybe)
-// https://github.com/rhysd/vim.wasm/blob/wasm/wasm/home/web_user/tryit.js#L15C9-L15C31
-
-// :e tutor - start "vim tutor"
-
-
-// See original project for extension related js etc
-
-
-// See: https://vitejs.dev/guide/static-deploy.html#netlify-with-git
-// for Netlify deployment.
 
 // need these headers for preview (plugin should work regardless as can set headers)
 // { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" },
@@ -36,12 +19,9 @@ import colorTheme from "./colorTheme.json";
 // Alternatives to vim.wasm:
 // https://github.com/brijeshb42/monaco-vim
 
-// Todo:
-// - Make term slightly smaller than outer div and add background
 
 
-
-const VIMTIPS_LINK = "https://github.com/bn-l/VimtipsPlus";
+const repoLink = "https://github.com/bn-l/VimtipsPlus";
 const getEditLink = (idLineNumber: number) => `https://github.com/bn-l/VimtipsPlus/edit/main/source/tips.md?plain=1#L${ idLineNumber }`;
 
 // Need to escape spaces. Can be any font available to browser including (like below), a web font 
@@ -61,10 +41,14 @@ const firstLoad = !localStorage.getItem("loadedBefore");
 if(firstLoad) localStorage.setItem("loadedBefore", "true");
 
 
+const startingTheme = getStartingTheme();
+
+
 export default function App() {
 
     const [tipIndex, setTipIndex] = useState(Math.floor(Math.random() * tips.length));
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+    const [theme, setTheme] = useState<"light" | "dark">(startingTheme);
+    const [termLoaded, setTermLoaded] = useState(false);
 
     const loadedAt = Date.now();
 
@@ -102,6 +86,9 @@ export default function App() {
                     break;
                 case "t":
                     toggleTheme();
+                    break;
+                case "s":
+                    setTermLoaded(true);
                     break;
                 default:
                     break;
@@ -144,7 +131,24 @@ export default function App() {
                         tipHtml={tipHtml}
                     />
                 </div>
-                <VimTerminal font={font} theme={theme} onLoad={() => an.event("vim_loaded")} />
+                {termLoaded ?
+                    <VimTerminal 
+                        font={font} 
+                        theme={theme} 
+                        loaded={termLoaded}
+                        setLoaded={setTermLoaded} 
+                    />
+                    :
+                    <div id="button-div">
+                        <button 
+                            className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
+                            onClick={() => setTermLoaded(true)}
+                        >
+                            load terminal (s)
+                        </button>
+                    </div>
+                }
+
             </div>
 
             <div className="flex place-self-end flex-row gap-3 text-xs text-slate-500 dark:text-zinc-400 p-5 sm:text-sm">
@@ -159,16 +163,28 @@ export default function App() {
                 </div>
 
                 <div className="">Tip ID#: {tipId}</div>
-                <div>
-                    <a href={getEditLink(idLineNumber)} 
+                <div id="edit-link">
+                    <a href={getEditLink(idLineNumber + 2)} // two down from id comment
                         className="text-stone-500 dark:text-zinc-400 no-underline"
                         onClick={() => an.event("edit_tip")}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >edit</a>
                 </div>
-                <div>
-                    <a href={VIMTIPS_LINK} 
+                <div id="add-link">
+                    <a href={getEditLink(5)} // two down from id comment
+                        className="text-stone-500 dark:text-zinc-400 no-underline"
+                        onClick={() => an.event("edit_tip")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >add</a>
+                </div>
+                <div id="repo-link">
+                    <a href={repoLink} 
                         className="text-stone-500 dark:text-zinc-400 no-underline"
                         onClick={() => an.event("repo_link")}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >Vimtips Plus</a>
                 </div> 
                 <div>by bn-l</div>

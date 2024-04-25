@@ -20,7 +20,7 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["source", "scripts"],
+  "include": ["source", "scripts", "VimTerminal"],
   "ts-node": {
 		"transpileOnly": true,
 		"files": true,

@@ -1,31 +1,48 @@
- 
-import { VimWasm, VimWorker } from "vim-wasm";
-import vimWorkerPath from "vim-wasm/vim.js?url";
-import { useRef, useEffect, useState } from "react";
+import { VimWasm } from "vim-wasm";
+import "./css/VimTerminal.css";
+import vimrc from "./vimrc.mjs";
 
+import { useRef, useEffect } from "react";
 
 const cancelEvent = (e: Event) => {
     e.preventDefault();
     e.stopPropagation();
 }
 
+
 export interface VimTerminalProps {
-    theme: "light" | "dark";
-    font: string;
+    theme?: "light" | "dark";
     /**
-     * A function to run after the vim terminal is loaded.
+     * Console font as a vim string. (see default for example). Can be any font the 
+     * browser can load.
+     * @default "Courier\\ new:h16"
      */
-    onLoad: () => void;
+    font?: string;
+    /**
+     * Whether the vim terminal is loaded
+     */
+    loaded: boolean;
+    /**
+     * Allows it to close itself on :q
+     */
+    setLoaded?: (loaded: boolean) => void;
 }
 
-export default function VimTerminal({theme, font, onLoad}: VimTerminalProps) {
+/**
+ * Listens for messages passed to it containing a type property equal to "vimWasm"
+ */
+export default function VimWasmComponent({
+    theme = "light",
+    font = "Courier\\ new:h16",
+    loaded = false,
+    setLoaded = () => {},
+}: VimTerminalProps) {
 
-    const [termLoaded, setTermLoaded] = useState(false);
     const vimRef = useRef<VimWasm | null>(null);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const divRef = useRef<HTMLDivElement>(null);
-    
+    const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    const divRef = useRef<HTMLDivElement | null>(null);
+
     useEffect(() => {
         if(!vimRef.current?.isRunning()) return;
 
@@ -36,87 +53,90 @@ export default function VimTerminal({theme, font, onLoad}: VimTerminalProps) {
 
         void vimRef.current.cmdline(theme === "light" ? cmdLight : cmdDark);
         // vimRef.current.sendKeydown("", 18);
-    }, [theme]);
+    }, [theme, vimRef]);
 
     // Term loaded
     useEffect(() => {
-        if (termLoaded && !vimRef.current) { 
-            vimRef.current = new VimWasm({
-                canvas: canvasRef.current!,
-                input: inputRef.current!,
-                workerScriptPath: vimWorkerPath,
-            });
 
-            divRef.current!.addEventListener(
-                'dragover',
-                e => {
-                    cancelEvent(e);
-                    if (e.dataTransfer) {
-                        e.dataTransfer.dropEffect = 'copy';
-                    }
-                },
-                false,
-            );
-           
-            divRef.current!.addEventListener(
-                "drop",
-                e => {
-                    cancelEvent(e);
-                    if (e.dataTransfer) {
-                        vimRef.current!.dropFiles(e.dataTransfer.files).catch(console.error);
-                    }
-                },
-                false,
-            );
+        if (!loaded || vimRef.current) return;
 
-            vimRef.current.onFileExport = (fullpath, contents) => {
-                const slashIdx = fullpath.lastIndexOf('/');
-                const filename = slashIdx !== -1 ? fullpath.slice(slashIdx + 1) : fullpath;
-                const blob = new Blob([contents], { type: 'application/octet-stream' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.rel = 'noopener';
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            };
+        // Create vim instance
+        vimRef.current = new VimWasm({
+            canvas: canvasRef.current!,
+            input: inputRef.current!,
+            workerScriptPath: "/vim.js",
+        });
 
-            vimRef.current.onError = console.error;
+        divRef.current!.addEventListener(
+            'dragover',
+            e => {
+                cancelEvent(e);
+                if (e.dataTransfer) {
+                    e.dataTransfer.dropEffect = 'copy';
+                }
+            },
+            false,
+        );
+        
+        divRef.current!.addEventListener(
+            "drop",
+            e => {
+                cancelEvent(e);
+                if (e.dataTransfer) {
+                    vimRef.current!.dropFiles(e.dataTransfer.files).catch(console.error);
+                }
+            },
+            false,
+        );
 
-            vimRef.current.start({
-                cmdArgs: [
-                    "/persist/white.txt",
-                    "-c", theme === "light" ? "set background=light" : "set background=dark",
-                    "-c", `colorscheme ${theme === "light" ? "PaperColor" : "onedark"}`,
-                    "-c", `set number | set guifont=${font} | set tabstop=4 | set shiftwidth=4 | set expandtab | set autoindent | syntax on | set wildmenu | set wildmode=longest:full,full`,
-                ],
-                debug: false,
-                dirs: ["/persist"],
-                persistentDirs: ["/persist"],
-                // files: {
-                //     "/persist/hello.js": startingFile,
-                // },
-                fetchFiles: {
-                    "/persist/white.txt": "/white.txt",
-                    "/usr/local/share/vim/colors/PaperColor.vim": "/PaperColor.vim",
-                },
+        vimRef.current.onFileExport = (fullpath, contents) => {
+            const slashIdx = fullpath.lastIndexOf('/');
+            const filename = slashIdx !== -1 ? fullpath.slice(slashIdx + 1) : fullpath;
+            const blob = new Blob([contents], { type: 'application/octet-stream' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.rel = 'noopener';
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        };
 
-            });
+        vimRef.current.onError = console.error;
 
-            vimRef.current.onVimExit = () => {
-                vimRef.current = null;
-                setTermLoaded(false);
-            };
+        vimRef.current.start({
+            cmdArgs: [
+                "/persist/white.txt",
+                "-c", theme === "light" ? "set background=light" : "set background=dark",
+                "-c", `colorscheme ${theme === "light" ? "PaperColor" : "onedark"}`,
+                "-c", `set guifont=${font}`,
+                // Rest set in vimrc
+            ],
+            debug: false,
+            dirs: ["/persist"],
+            persistentDirs: ["/persist"],
+            files: {
+                "/home/web_user/.vim/vimrc": vimrc,
+            },
+            fetchFiles: {
+                "/persist/white.txt": "/white.txt",
+                "/usr/local/share/vim/colors/PaperColor.vim": "/PaperColor.vim",
+                // "/.vim/vimrc": "/vimrc",
+            },
 
-            vimRef.current.focus();
-            
-            onLoad();
-        }   
-    }, [termLoaded]);
+        });
+
+        vimRef.current.onVimExit = () => {
+            vimRef.current = null;
+            setLoaded(false);
+        };
+
+        vimRef.current.focus();
+
+    }, [font, theme, loaded, vimRef, canvasRef, inputRef, divRef]);
 
     useEffect(() => {
         // To save the result of :w calls to indexdb, need to :q
@@ -127,34 +147,17 @@ export default function VimTerminal({theme, font, onLoad}: VimTerminalProps) {
             //     void vimRef.current.cmdline("qall!");
             // }
         };
-
-        const handleKeyPress = (event: KeyboardEvent) => {
-            if (event.key === "s") {
-                setTermLoaded(true);
-            }
-        };
-        window.addEventListener("keypress", handleKeyPress);
         window.addEventListener("beforeunload", handleBeforeUnload);
     
         return () => {
-            window.removeEventListener("keypress", handleKeyPress); 
             window.removeEventListener("beforeunload", handleBeforeUnload);
         };
     }, []);
 
-    if (!termLoaded) {
-        return (
-            <button 
-                className="rounded-md px-4 py-2 bg-white border-none drop-shadow-md cursor-pointer font-mono lowercase dark:bg-[#525252] dark:text-zinc-100"
-                onClick={() => setTermLoaded(true)}
-            >load terminal (s)</button>
-        );
-    }
-
     return (
-        <div id="vim-terminal" ref={divRef}>
-            <input id="vim-input" autoFocus ref={inputRef} />
-            <canvas id="vim-canvas" ref={canvasRef}></canvas>
+        <div id="vim-terminal"  ref={divRef}>
+            <input id="vim-input" ref={inputRef} />
+            <canvas id="vim-canvas" ref={canvasRef} />
         </div>
     );
 }

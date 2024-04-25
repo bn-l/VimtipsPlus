@@ -1,0 +1,49 @@
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    margin: 0;
+    min-width: 320px;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    --light-bg: white;
+    --dark-bg: black;
+
+    background-color: var(--light-bg);
+}
+
+:root.dark {
+    background-color: var(--dark-bg)
+}
+
+body {
+    margin: 0;
+}
+
+code {
+    /* https://stackoverflow.com/a/64133415/2083958 */
+    font-family: 'SF Mono', SFMono-Regular, ui-monospace,
+    'DejaVu Sans Mono', Menlo, Consolas, monospace;
+    padding: 0.2em;
+    border-radius: 0.4em;
+    background-color: #f2f2f2;
+}
+
+:root.dark code {
+    background-color: #23221d;
+}
+
+
+#tip-html p {
+    margin: 0 0 1em 0;
+    /* text-align: center; */
+}
+
+
+

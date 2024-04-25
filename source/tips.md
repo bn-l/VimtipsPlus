@@ -133,7 +133,7 @@ inside those quotes and drop you into insert mode.
 
 <!-- 1f229a -->
 
-CTRL-c In Normal mode, any pending command is aborted. Also aborts current
+`CTRL-c` In Normal mode, any pending command is aborted. Also aborts current
 search.
 
 
@@ -306,8 +306,8 @@ html if your cursor is on the first letter of the attribute.
 
 <!-- d0afaa -->
 
-f is for finding things so it doesn’t do anything on it’s own. It will jump to
-the next character you type after f. It can be combined with c,d,y to change,
+`f` is for finding things so it doesn’t do anything on it’s own. It will jump to
+the next character you type after `f`. It can be combined with `c`,`d`,`y` to change,
 cut, and copy sections of text.
 
 
@@ -316,7 +316,7 @@ cut, and copy sections of text.
 
 <!-- 5cf64e -->
 
-`fr` jumps to the next r on the (same line only).
+`fr` jumps to the next "r" on the (same line only).
 
 
 ---
@@ -324,7 +324,7 @@ cut, and copy sections of text.
 
 <!-- 0533d0 -->
 
-`ft` jumps to the next t on the (same line only).
+`ft` jumps to the next "t" on the (same line only).
 
 
 ---
@@ -332,7 +332,7 @@ cut, and copy sections of text.
 
 <!-- 5218bc -->
 
-`f,` jumps to the next , on the (same line only).
+`f,` jumps to the next "," on the (same line only).
 
 
 ---
@@ -1395,8 +1395,8 @@ is half a screen.
 
 <!-- f4daad -->
 
-y stands for copy, I mean yank. It doesn’t do anything by itself. It is very
-similar to c and d in how it can be used.
+`y` stands for copy, I mean yank. It doesn’t do anything by itself. It is very
+similar to `c` and `d` in how it can be used.
 
 
 ---
