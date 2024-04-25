@@ -1,11 +1,11 @@
 {
     "name": "Vimtips Plus",
     "description": "Learn vim with daily small tips that you can practice right in the browser with this new tab extension. Features a built in-vim terminal implemented in wasm.",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "manifest_version": 3,
     "incognito": "split",
     "chrome_url_overrides": {
-        "newtab": "index.html" 
+        "newtab": "index.html"
     },
     "permissions": [
         "storage",
