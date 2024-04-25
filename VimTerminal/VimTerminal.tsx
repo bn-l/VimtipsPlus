@@ -1,49 +1,40 @@
-import { VimWasm } from "./vendor/vimwasm.js";
-// import vimWorkerPath from "./vendor/vim.js?url";
+import { VimWasm } from "vim-wasm";
+import "./VimTerminal.css";
 
-// import { VimWasm } from "vim-wasm";
-// import vimWorkerPath from "vim-wasm/vim.js?url";
-
-
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 
 const cancelEvent = (e: Event) => {
     e.preventDefault();
     e.stopPropagation();
 }
 
-
+export interface VimTerminalProps {
+    theme?: "light" | "dark";
+    /**
+     * Console font as a vim string. (see default for example). Can be any font the 
+     * browser can load.
+     * @default "Courier\\ new:h16"
+     */
+    font?: string;
+    /**
+     * Whether the vim terminal is loaded
+     */
+    loaded: boolean;
+}
 
 /**
  * Listens for messages passed to it containing a type property equal to "vimWasm"
  */
-export default function VimWasmComponent() {
+export default function VimWasmComponent({
+    theme = "light",
+    font = "Courier\\ new:h16",
+    loaded = false
+}) {
 
     const vimRef = useRef<VimWasm | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const inputRef = useRef<HTMLInputElement | null>(null);
     const divRef = useRef<HTMLDivElement | null>(null);
-
-    const [loaded, setLoaded] = useState(false);
-    const [font, setFont] = useState("Courier\\ new:h16");
-    const [theme, setTheme] = useState<"light" | "dark">("light");
-
-
-    useEffect(() => {
-        const handleMessage = (event: MessageEvent) => {
-            if (event.data.type !== "vimWasm") return;
-            
-            const { loaded, font, theme } = event.data.state;
-            setLoaded(loaded);
-            setFont(font);
-            setTheme(theme);
-        };
-        window.addEventListener("message", handleMessage);
-        return () => {
-          window.removeEventListener("message", handleMessage);
-        };
-    }, []);
-
 
     useEffect(() => {
         if(!vimRef.current?.isRunning()) return;
