@@ -17,12 +17,6 @@
         "128": "icon128.png"
     },
     "content_security_policy": {
-        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';",
-        "sandbox": "sandbox allow-scripts 'unsafe-inline' 'unsafe-eval';"
-    },
-    "sandbox": {
-        "pages": [
-            "VimTerminal/terminal.html"
-        ]
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
     }
 }

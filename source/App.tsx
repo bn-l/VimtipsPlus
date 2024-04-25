@@ -5,7 +5,6 @@ import logo from "./images/logo.svg";
 import Popup from "./Popup.tsx";
 import colorTheme from "./colorTheme.json";
 import VimTerminal from "./VimTerminal.tsx";
-import an from "../vendor/google-analytics.ts";
 import extensionBadge from "../media/extension-badge.svg";
 
 import { useState, useEffect } from "react";
@@ -52,17 +51,6 @@ export default function App() {
     const [termLoaded, setTermLoaded] = useState(false);
 
     const loadedAt = Date.now();
-
-    useEffect(() => {
-        void an.pageView(document.title, document.location.href);
-
-        const handleBeforeUnload = () => {
-            void an.event("quit", { duration: Date.now() - loadedAt });
-        };
-
-        window.addEventListener("beforeunload", handleBeforeUnload);
-        return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-    }, []);
     
     useEffect(() => {
         document.title = `New Tab - VimTips Plus- Tip #${ tips[tipIndex].tipId }`;
@@ -166,7 +154,6 @@ export default function App() {
                         hotkey="?" 
                         displayElement="?" 
                         startOpen={firstLoad} 
-                        onOpen={() => an.event("help_popup")}
                     />
                 </div>
 
@@ -174,7 +161,6 @@ export default function App() {
                 <div id="edit-link">
                     <a href={getEditLink(idLineNumber + 2)} // two down from id comment
                         className="text-stone-500 dark:text-zinc-400 no-underline"
-                        onClick={() => an.event("edit_tip")}
                         target="_blank"
                         rel="noopener noreferrer"
                     >edit</a>
@@ -182,7 +168,6 @@ export default function App() {
                 <div id="add-link">
                     <a href={getEditLink(5)} // two down from id comment
                         className="text-stone-500 dark:text-zinc-400 no-underline"
-                        onClick={() => an.event("edit_tip")}
                         target="_blank"
                         rel="noopener noreferrer"
                     >add</a>
@@ -190,7 +175,6 @@ export default function App() {
                 <div id="repo-link">
                     <a href={repoLink} 
                         className="text-stone-500 dark:text-zinc-400 no-underline"
-                        onClick={() => an.event("repo_link")}
                         target="_blank"
                         rel="noopener noreferrer"
                     >Vimtips Plus</a>
