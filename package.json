@@ -1,7 +1,7 @@
 {
   "name": "vimtips-plus",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "build-tips": "tsx ./scripts/process-tips.mts",
@@ -17,7 +17,7 @@
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
     "dev": "vite --force",
     "build-app": "tsc && vite build",
-    "build": "echo 'this buggy action needs a build command present'" 
+    "build": "echo 'this buggy action needs a build command present'"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
