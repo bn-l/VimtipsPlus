@@ -10,10 +10,11 @@ on:
 jobs:
 
   build:
-    name: "Vite build"
+    name: "Build and Deploy"
     runs-on: ubuntu-latest
-    steps:
 
+
+    steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Setup Node
@@ -28,13 +29,18 @@ jobs:
         run: npm run build-app
 
       - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@master
+        uses: nwtgck/actions-netlify@v3.0
         with:
+          publish-dir: './dist'
+          production-branch: master
+          production-deploy: true
+          netlify-config-path: ./dist/netlify.toml
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          overwrites-pull-request-comment: false
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} 
-          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
-          NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: dist
-          build_command: ""
-          install_command: ""
-
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1

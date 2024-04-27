@@ -11,7 +11,7 @@
   - Add Extension update to CI
 
 - Add chrome extension page link to readme
-  - update App.tsx link to extension store
+  - update App.tsx badge and link to extension store
 
 
 

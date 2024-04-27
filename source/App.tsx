@@ -105,12 +105,12 @@ export default function App() {
                 </div>
 
                 <div className="pt-8 pr-8 drop-shadow-sm w-70vw flex flex-row justify-end align-middle gap-2ch">
-                    {chrome?.runtime ? null : 
-                        <img 
-                            className="w-15ch"
-                            src={extensionBadge}
-                            alt="Download the Vimtips Plus chrome new tab page"
-                        /> 
+                    {chrome?.runtime ? null : ""
+                        // <img 
+                        //     className="w-15ch"
+                        //     src={extensionBadge}
+                        //     alt="Download the Vimtips Plus chrome new tab page"
+                        // /> 
                     }
                     <DarkModeSwitch 
                         lightColor={colorTheme.colors.light} 
