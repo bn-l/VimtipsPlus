@@ -1,7 +1,7 @@
 {
     "name": "Vimtips Plus",
     "description": "Learn vim with daily small tips that you can practice right in a new tab. Features a built in-vim terminal implemented in wasm.",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "manifest_version": 3,
     "incognito": "split",
     "chrome_url_overrides": {
