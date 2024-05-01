@@ -12,11 +12,10 @@
 A chrome new tab extension / daily site with a built-in wasm implemention of vim. <br />
 Learn vim with daily small tips that you can practice right in the browser.
 
-<a href="https://vimtipsplus.netlify.app/">https://vimtipsplus.netlify.app</a>
+**Demo:** <a href="https://vimtipsplus.netlify.app/">https://vimtipsplus.netlify.app</a>
 
 
-<!-- Must have extension available to use badge -->
-<!-- <a href=""><img src="./media/extension-badge.svg" alt="Download extension for chrome" width="200px" /></a> -->
+<a href="https://chromewebstore.google.com/detail/vimtips-plus/oppimlkbmphmnabeldemahpgpajincbb"><img src="./media/extension-badge.svg" alt="Download extension for chrome" width="200px" /></a>
 
 </div>
 

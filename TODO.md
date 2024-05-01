@@ -12,6 +12,7 @@
 
 - Add chrome extension page link to readme
   - update App.tsx badge and link to extension store
+  - To readme also
 
 
 
