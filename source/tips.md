@@ -943,8 +943,7 @@ calculations. From normal mode you can launch it by hitting `"=`.
 
 <!-- e7be72 -->
 
-q records things - so it doesn’t do much on its own. You need to tell it what
-register to store the recorded sequence in.
+`q` followed by a register will start recording. E.g.: `q<letter>`, and you can end it by typing `q` again. You can then replay it simply by typing `@<letter>`. Record search, movement, replacement... These "registers" are the same used by delete, yank (copy), and put (paste) so this means you can yank text from the editor into a register then execute it as a command.
 
 
 ---
