@@ -2,22 +2,21 @@ import JSZip from "jszip";
 import fsp from "node:fs/promises";
 import pathe from "pathe";
 
+const distDir = "dist";
 
 let zip = new JSZip();
-const dircontents = await fsp.readdir("dist", { recursive: true, withFileTypes: true });
+const files = await fsp.readdir(distDir, { recursive: true });
 
 
-for (const ent of dircontents) {
+for (const relativePath of files) {
 
-    if (ent.isDirectory()) continue;
+    const fullPath = pathe.join(distDir, relativePath);
+    const stat = await fsp.stat(fullPath);
+    if (stat.isDirectory()) continue;
 
-    const relativePath = pathe.join(ent.parentPath, ent.name);
+    const data = await fsp.readFile(fullPath);
 
-    const data = await fsp.readFile(pathe.join(ent.parentPath, ent.name));
-
-    const savePath = relativePath.replace("dist/", "");
-
-    zip.file(savePath, data);
+    zip.file(relativePath, data);
 }
 
 const content = await zip.generateAsync({ type: "nodebuffer" });
