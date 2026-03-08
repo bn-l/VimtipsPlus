@@ -14,7 +14,7 @@
     "test": "echo no tests yet",
     "lint:style": "npx eslint --fix",
     "bump-manifest": "tsx ./scripts/bump-manifest.mts",
-    "prebump": "npm run build-tips && npm run bump-manifest && git acu \"chore: pre-release commit\" && npm run build-app",
+    "prebump": "npm run build-tips && npm run bump-manifest && git add -A && git commit -m \"chore: pre-release commit\" && npm run build-app",
     "bump": "npx bumpp",
     "postbump": "npm run zip-dist",
     "lint:react": "npx eslint --config ./eslintrc.react.json --ext .ts,.tsx,.mts source",
