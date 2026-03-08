@@ -11,9 +11,9 @@ for (const ent of dircontents) {
 
     if (ent.isDirectory()) continue;
 
-    const relativePath = pathe.join(ent.path, ent.name);
+    const relativePath = pathe.join(ent.parentPath, ent.name);
 
-    const data = await fsp.readFile(pathe.join(ent.path, ent.name));
+    const data = await fsp.readFile(pathe.join(ent.parentPath, ent.name));
 
     const savePath = relativePath.replace("dist/", "");
 
