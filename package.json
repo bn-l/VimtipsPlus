@@ -62,7 +62,7 @@
     "wrap-ansi": "^9.0.0"
   },
   "dependencies": {
-    "clean-components": "^1.0.20",
+    "clean-components": "^1.0.25",
     "jszip": "^3.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
